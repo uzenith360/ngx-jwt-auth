@@ -9,7 +9,7 @@
     "build": "npm run clean && ng build jwt-auth",
     "watch": "ng build --watch --configuration development",
     "prepack": "npm run build",
-    "test": "ng test",
+    "test": "ng test jwt-auth",
     "prepare": "husky install"
   },
   "repository": {
