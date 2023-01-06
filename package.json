@@ -6,7 +6,7 @@
     "clean": "rm -rf ./dist",
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run clean && ng build",
+    "build": "npm run clean && ng build jwt-auth",
     "watch": "ng build --watch --configuration development",
     "prepack": "npm run build",
     "test": "ng test",
