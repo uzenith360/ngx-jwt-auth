@@ -41,7 +41,7 @@ export class AuthDialogService {
 
         AuthDialogService.LoginSuccessSubject.next(jwt);
 
-        AuthDialogService.isInstanceOpen = false;        
+        AuthDialogService.isInstanceOpen = false;
       });
 
     });
