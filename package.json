@@ -1,7 +1,7 @@
 {
   "name": "@uzenith360/ngx-jwt-auth",
   "version": "0.0.0",
-  "description": "An Angular JWT authentication library",
+  "description": "An Angular JWT authentication library with authentication service, route guard, interceptor and login modal to get your Angular app authentication setup in a breeze 🌬️",
   "scripts": {
     "clean": "rm -rf ./dist",
     "ng": "ng",
