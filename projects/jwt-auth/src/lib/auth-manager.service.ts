@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { JwtManagerService } from './jwt-manager.service';
+import { JwtAuthService } from './jwt-auth.service';
 import { AuthService } from './auth.service';
 
 import { AuthDialogService } from './auth-dialog.service';
@@ -18,7 +18,7 @@ export class AuthManagerService {
   private redirectUrl?: string;
 
   constructor(
-    private jwtManagerService: JwtManagerService,
+    private JwtAuthService: JwtAuthService,
     private authService: AuthService,
     private authDialogService: AuthDialogService
   ) {}
@@ -27,14 +27,14 @@ export class AuthManagerService {
    * Just check if there's auth
    */
   private isAuth(): boolean {
-    return !this.jwtManagerService.check();
+    return !this.JwtAuthService.check();
   }
 
   public auth(email: string, password: string): Observable<{ message: string, jwtAndUser: JWTAndUser }> {
     return this.authService.auth(email, password)
       .pipe(
         map(({ message, jwtAndUser }) => {
-          this.jwtManagerService.set(jwtAndUser);
+          this.JwtAuthService.set(jwtAndUser);
 
           return { message, jwtAndUser };
         })
@@ -48,7 +48,7 @@ export class AuthManagerService {
    */
   public getAuthAndUser(force: boolean = true, dontCheckAuth: boolean = false): Promise<JWTAndUser> {
     if (dontCheckAuth || this.isAuth()) {
-      const jwtAndUser: JWTAndUser | null = this.jwtManagerService.getJWTAndUser();
+      const jwtAndUser: JWTAndUser | null = this.JwtAuthService.getJWTAndUser();
 
       if (!!jwtAndUser) {
         return Promise.resolve(jwtAndUser);
@@ -60,7 +60,7 @@ export class AuthManagerService {
         this.authDialogService
           .open()
           .then((jwtAndUser) => {
-            this.jwtManagerService.set(jwtAndUser);
+            this.JwtAuthService.set(jwtAndUser);
 
             resolve(jwtAndUser);
           }).catch((err) => reject(new AuthError(err?.message)));
@@ -73,7 +73,7 @@ export class AuthManagerService {
   public getLoggedInUser(forceAuth: boolean = true): Promise<User> {
     return new Promise((resolve, reject) => {
       this.getAuthAndUser(forceAuth)
-        .then(({ user }) => resolve(user /* && jwtAndUser.user || this.jwtManagerService.getUser()*/))
+        .then(({ user }) => resolve(user /* && jwtAndUser.user || this.JwtAuthService.getUser()*/))
         .catch((err) => reject(err));
     });
   }
@@ -87,18 +87,18 @@ export class AuthManagerService {
   }
 
   public updateUser(user: any): void {
-    this.jwtManagerService.setUser(user);
+    this.JwtAuthService.setUser(user);
   }
 
   // public logout(): void {
-  //   return this.jwtManagerService.clear();
+  //   return this.JwtAuthService.clear();
   // }
 
   public logout(): Observable<any> {
     return this.authService.logout()
       .pipe(
         map(({ message }) => {
-          this.jwtManagerService.clear();
+          this.JwtAuthService.clear();
 
           return { message };
         })
