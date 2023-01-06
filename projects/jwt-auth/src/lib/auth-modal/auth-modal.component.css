@@ -1,0 +1,33 @@
+/* h1 {
+  margin: 0;
+  text-align: center;
+  color: rgb(4, 37, 59);
+}
+
+.mat-dialog-actions {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+button {
+  vertical-align: middle;
+  background: none;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgb(4, 37, 59);
+  color: rgb(4, 37, 59);
+  height: 3.85em;
+  width: 5em;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #ffffff;
+  background-color: rgb(4, 37, 59);
+}
+
+button[disabled] {
+  border-color: #bbb;
+  background-color: #bbb !important;
+  pointer-events: none;
+  color: #888;
+} */

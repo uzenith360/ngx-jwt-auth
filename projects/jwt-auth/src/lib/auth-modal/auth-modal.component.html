@@ -1,0 +1,25 @@
+<h1 mat-dialog-title class="text-center font-semibold text-md">Login</h1>
+<small *ngIf="submitMessage">{{submitMessage}}</small>
+<div mat-dialog-content>
+ <form [formGroup]="loginForm" (ngSubmit)="login()">
+  <mat-form-field class="w-full" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input autocomplete="email" type="email" formControlName="email" [readonly]="isSubmitting" matInput required />
+    <mat-error *ngIf="loginFormControls.email?.errors?.required">Email is required.
+    </mat-error>
+    <mat-error *ngIf="loginFormControls.email?.errors?.email">Email is invalid.
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="w-full" appearance="fill">
+    <mat-label>Password</mat-label>
+    <input autocomplete="current-password" type="password" formControlName="password" [readonly]="isSubmitting" matInput required />
+    <mat-error *ngIf="loginFormControls.password?.errors?.required">Password is required.
+    </mat-error>
+  </mat-form-field>
+  <button hidden type="submit">Submit</button>
+ </form>
+</div> 
+<div class="justify-between flex" mat-dialog-actions>
+  <button class="px-4 py-2" mat-button matRipple [mat-dialog-close]="null" aria-label="Cancel Button">Cancel</button>
+  <button class="px-4 py-2 shadow-sm rounded-sm bg-blue-900 text-white hover:text-blue-900 hover:bg-white" mat-button matRipple [disabled]="!loginForm.valid || isSubmitting" aria-label="Login Button" (click)="login()">Login</button>
+</div>
