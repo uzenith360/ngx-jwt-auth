@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import EnvironmentConfig from 'dist/jwt-auth/lib/environment-config.interface';
 import { JwtAuthModule } from 'dist/jwt-auth/lib/jwt-auth.module';
 
-
 const config: EnvironmentConfig
   = {
     forgotPasswordUrl: '',
