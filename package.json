@@ -1,7 +1,7 @@
 {
   "name": "@uzenith360/ngx-jwt-auth",
   "version": "0.0.0",
-  "description": "An Angular library NPM starter (or example) project to ease setup of Angular libraries as NPM packages from your GitHub repo",
+  "description": "An Angular JWT authentication library",
   "scripts": {
     "clean": "rm -rf ./dist",
     "ng": "ng",
