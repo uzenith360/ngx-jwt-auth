@@ -23,9 +23,9 @@
   "author": "@uzenith360",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/uzenith360/ngx-jwt-auth/utils/issues"
+    "url": "https://github.com/uzenith360/ngx-jwt-auth/issues"
   },
-  "homepage": "https://github.com/uzenith360/ngx-jwt-auth/utils#readme",
+  "homepage": "https://github.com/uzenith360/ngx-jwt-auth#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "access": "public"
