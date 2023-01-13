@@ -4,7 +4,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import JWT from './jwt.interface';
 import JWTAndUser from './jwt-and-user.interface';
 import User from './user.interface';
-import EnvironmentConfig from './environment-config.interface';
+import { EnvironmentConfig } from './environment-config.interface';
 import EnvironmentConfigService from './environment-config.service';
 
 @Injectable({

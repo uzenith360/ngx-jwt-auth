@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthManagerService } from 'dist/jwt-auth/lib/auth-manager.service';
+import { AuthManagerService } from 'jwt-auth';
 
 @Component({
   selector: 'app-root',

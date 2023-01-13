@@ -1,4 +1,4 @@
-export default interface EnvironmentConfig {
+export interface EnvironmentConfig {
   tokenStoreId: string;
   loginUrl: string;
   logoutUrl: string;

@@ -6,7 +6,7 @@ import { map, catchError } from 'rxjs/operators';
 
 import JWTAndUser from './jwt-and-user.interface';
 import { HttpHelpers } from './http-helpers';
-import EnvironmentConfig from './environment-config.interface';
+import { EnvironmentConfig } from './environment-config.interface';
 import HttpError from './http-error';
 import EnvironmentConfigService from './environment-config.service';
 

@@ -16,7 +16,7 @@ import { AuthDialogService } from './auth-dialog.service';
 import { AuthInterceptorService } from './auth-interceptor.service';
 import { AuthManagerGuard } from './auth-manager.guard';
 import { UserService } from './user.service';
-import EnvironmentConfig from './environment-config.interface';
+import { EnvironmentConfig } from './environment-config.interface';
 import EnvironmentConfigService from './environment-config.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -34,17 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatInputModule,
   ],
-  providers: [
-    authHttpInterceptorProvider,
-    AuthInterceptorService,
-    AuthManagerService,
-    JwtAuthService,
-    AuthDialogService,
-    JwtHelperService,
-    AuthManagerGuard,
-    AuthService,
-    UserService,
-  ],
+  providers: [],
   exports: [],
 })
 export class JwtAuthModule { 

@@ -5,7 +5,7 @@ import { Observable, from, throwError } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
 
 import { AuthManagerService } from './auth-manager.service';
-import EnvironmentConfig from './environment-config.interface';
+import { EnvironmentConfig } from './environment-config.interface';
 import EnvironmentConfigService from './environment-config.service';
 
 @Injectable({

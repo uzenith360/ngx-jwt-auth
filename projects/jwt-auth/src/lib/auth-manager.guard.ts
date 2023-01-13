@@ -3,7 +3,7 @@ import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnaps
 import { Observable } from 'rxjs';
 
 import { AuthManagerService } from './auth-manager.service';
-import EnvironmentConfig from './environment-config.interface';
+import { EnvironmentConfig } from './environment-config.interface';
 import EnvironmentConfigService from './environment-config.service';
 
 @Injectable({

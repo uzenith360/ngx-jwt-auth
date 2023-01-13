@@ -6,7 +6,7 @@ import { map, catchError } from 'rxjs/operators';
 
 import User from './user.interface';
 import { HttpHelpers } from './http-helpers';
-import EnvironmentConfig from './environment-config.interface';
+import { EnvironmentConfig } from './environment-config.interface';
 import EnvironmentConfigService from './environment-config.service';
 
 @Injectable({

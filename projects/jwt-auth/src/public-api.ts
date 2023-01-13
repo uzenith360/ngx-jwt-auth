@@ -3,7 +3,6 @@
  */
 
 export * from './lib/environment-config.interface';
-export * from './lib/environment-config.service';
 export * from './lib/jwt.interface';
 export * from './lib/user.service';
 export * from './lib/auth.service';
