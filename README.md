@@ -4,6 +4,10 @@ An Angular JWT authentication library with authentication service, route guard, 
 
 [![HRkiJql.md.png](https://iili.io/HRkiJql.md.png)](https://freeimage.host/i/HRkiJql)
 
+## Usage
+
+Refer to the example app for now, I will find time to do a proper documentation
+
 ## Support
 
 For support, open an issue or email wogwugwu.zenith@gmail.com, I will do my best to respond to all issues
