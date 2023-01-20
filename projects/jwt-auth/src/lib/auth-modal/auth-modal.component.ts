@@ -50,7 +50,7 @@ export class AuthModalComponent implements OnInit, OnDestroy {
         this.isSubmitting = false;
         this.submitMessage = res.message;
 
-        this.dialogRef.close(res.jwtAndUser);
+        this.dialogRef.close(res.jwt);
       }, (err: any) => {
         this.isSubmitting = false;
 

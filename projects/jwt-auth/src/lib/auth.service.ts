@@ -4,7 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-import JWTAndUser from './jwt-and-user.interface';
+import JWT from './jwt.interface';
 import { HttpHelpers } from './http-helpers';
 import { EnvironmentConfig } from './environment-config.interface';
 import HttpError from './http-error';
@@ -20,12 +20,12 @@ export class AuthService {
     private http: HttpClient,
   ) { }
 
-  public auth(email: string, password: string): Observable<{ message: string, jwtAndUser: JWTAndUser }> {
+  public auth(email: string, password: string): Observable<{ message: string, jwt: JWT }> {
     return this.http.post(this.config.loginUrl, { email, password })
       .pipe(
         HttpHelpers.retry(),
         catchError(
-          (err, caught: Observable<JWTAndUser>) => {
+          (err, caught: Observable<JWT>) => {
             switch (err.status) {
               case 401:
                 return throwError(() => new HttpError('Email/Password combination is incorrect', err.status));
@@ -38,8 +38,8 @@ export class AuthService {
           },
         ),
         map(
-          (jwtAndUser: JWTAndUser) => {
-            return { message: 'Successfully logged in', jwtAndUser };
+          (jwt: JWT) => {
+            return { message: 'Successfully logged in', jwt };
           },
         )
       );

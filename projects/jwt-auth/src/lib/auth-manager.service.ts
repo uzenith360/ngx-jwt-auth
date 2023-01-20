@@ -8,8 +8,9 @@ import { AuthService } from './auth.service';
 
 import { AuthDialogService } from './auth-dialog.service';
 import User from './user.interface';
-import JWTAndUser from './jwt-and-user.interface';
+import JWT from './jwt.interface';
 import AuthError from './auth-error';
+import JWTAndUser from './jwt-and-user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class AuthManagerService {
     private JwtAuthService: JwtAuthService,
     private authService: AuthService,
     private authDialogService: AuthDialogService
-  ) {}
+  ) { }
 
   /**
    * Just check if there's auth
@@ -30,13 +31,13 @@ export class AuthManagerService {
     return !this.JwtAuthService.check();
   }
 
-  public auth(email: string, password: string): Observable<{ message: string, jwtAndUser: JWTAndUser }> {
+  public auth(email: string, password: string): Observable<{ message: string, jwt: JWT }> {
     return this.authService.auth(email, password)
       .pipe(
-        map(({ message, jwtAndUser }) => {
-          this.JwtAuthService.set(jwtAndUser);
+        map(({ message, jwt }) => {
+          this.JwtAuthService.set(jwt);
 
-          return { message, jwtAndUser };
+          return { message, jwt };
         })
       );
   }
@@ -60,7 +61,7 @@ export class AuthManagerService {
         this.authDialogService
           .open()
           .then((jwtAndUser) => {
-            this.JwtAuthService.set(jwtAndUser);
+            this.JwtAuthService.set(jwtAndUser.jwt);
 
             resolve(jwtAndUser);
           }).catch((err) => reject(new AuthError(err?.message)));
@@ -81,14 +82,14 @@ export class AuthManagerService {
   public getAuthorization(forceAuth: boolean = true): Promise<string> {
     return new Promise((resolve, reject) => {
       this.getAuthAndUser(forceAuth)
-        .then(({ access_token, token_type }) => resolve(`${token_type} ${access_token}`))
+        .then(({ jwt: { access_token, token_type } }) => resolve(`${token_type} ${access_token}`))
         .catch((err) => reject(err));
     });
   }
 
-  public updateUser(user: any): void {
-    this.JwtAuthService.setUser(user);
-  }
+  // public updateUser(user: any): void {
+  //   this.JwtAuthService.setUser(user);
+  // }
 
   // public logout(): void {
   //   return this.JwtAuthService.clear();
