@@ -1,6 +1,11 @@
 {
   "name": "jwt-auth",
   "version": "0.0.1",
+  "exports": {
+    ".": {
+      "css": "./src/styles.css"
+    }
+  },
   "peerDependencies": {
     "@angular/common": "^15.0.0",
     "@angular/core": "^15.0.0",
