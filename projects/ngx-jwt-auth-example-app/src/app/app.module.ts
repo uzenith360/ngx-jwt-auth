@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EnvironmentConfig } from 'jwt-auth';
-import { JwtAuthModule } from 'jwt-auth';
+import { EnvironmentConfig } from 'ngx-jwt-auth';
+import { JwtAuthModule } from 'ngx-jwt-auth';
 
 const config: EnvironmentConfig
   = {

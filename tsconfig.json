@@ -12,8 +12,8 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
-      "jwt-auth": [
-        "dist/jwt-auth"
+      "ngx-jwt-auth": [
+        "dist/ngx-jwt-auth"
       ]
     },
     "declaration": false,

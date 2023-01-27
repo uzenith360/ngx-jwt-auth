@@ -1,20 +1,20 @@
 {
-  "name": "@uzenith360/ngx-jwt-auth",
+  "name": "@uzenith360/ngx-ngx-jwt-auth",
   "version": "0.0.0",
   "description": "An Angular JWT authentication library with authentication service, route guard, interceptor and login modal to get your Angular app authentication setup in a breeze 🌬️",
   "scripts": {
     "clean": "rm -rf ./dist",
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run clean && ng build jwt-auth",
+    "build": "npm run clean && ng build ngx-jwt-auth",
     "watch": "ng build --watch --configuration development",
     "prepack": "npm run build",
-    "test": "ng test jwt-auth",
+    "test": "ng test ngx-jwt-auth",
     "prepare": "husky install"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/uzenith360/ngx-jwt-auth.git"
+    "url": "https://github.com/uzenith360/ngx-ngx-jwt-auth.git"
   },
   "keywords": [
     "typescript",
@@ -23,9 +23,9 @@
   "author": "@uzenith360",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/uzenith360/ngx-jwt-auth/issues"
+    "url": "https://github.com/uzenith360/ngx-ngx-jwt-auth/issues"
   },
-  "homepage": "https://github.com/uzenith360/ngx-jwt-auth#readme",
+  "homepage": "https://github.com/uzenith360/ngx-ngx-jwt-auth#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "access": "public"

@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'jwt-auth-example-app'`, () => {
+  it(`should have as title 'ngx-jwt-auth-example-app'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('jwt-auth-example-app');
+    expect(app.title).toEqual('ngx-jwt-auth-example-app');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('jwt-auth-example-app app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('ngx-jwt-auth-example-app app is running!');
   });
 });

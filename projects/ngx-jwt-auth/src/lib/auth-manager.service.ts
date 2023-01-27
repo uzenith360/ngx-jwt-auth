@@ -19,7 +19,7 @@ export class AuthManagerService {
   private redirectUrl?: string;
 
   constructor(
-    private JwtAuthService: JwtAuthService,
+    private jwtAuthService: JwtAuthService,
     private authService: AuthService,
     private authDialogService: AuthDialogService
   ) { }
@@ -28,14 +28,14 @@ export class AuthManagerService {
    * Just check if there's auth
    */
   private isAuth(): boolean {
-    return !this.JwtAuthService.check();
+    return !this.jwtAuthService.check();
   }
 
   public auth(email: string, password: string): Observable<{ message: string, jwt: JWT }> {
     return this.authService.auth(email, password)
       .pipe(
         map(({ message, jwt }) => {
-          this.JwtAuthService.set(jwt);
+          this.jwtAuthService.set(jwt);
 
           return { message, jwt };
         })
@@ -49,7 +49,7 @@ export class AuthManagerService {
    */
   public getAuthAndUser(force: boolean = true, dontCheckAuth: boolean = false): Promise<JWTAndUser> {
     if (dontCheckAuth || this.isAuth()) {
-      const jwtAndUser: JWTAndUser | null = this.JwtAuthService.getJWTAndUser();
+      const jwtAndUser: JWTAndUser | null = this.jwtAuthService.getJWTAndUser();
 
       if (!!jwtAndUser) {
         return Promise.resolve(jwtAndUser);
@@ -61,7 +61,7 @@ export class AuthManagerService {
         this.authDialogService
           .open()
           .then((jwtAndUser) => {
-            this.JwtAuthService.set(jwtAndUser.jwt);
+            this.jwtAuthService.set(jwtAndUser.jwt);
 
             resolve(jwtAndUser);
           }).catch((err) => reject(new AuthError(err?.message)));
@@ -99,7 +99,7 @@ export class AuthManagerService {
     return this.authService.logout()
       .pipe(
         map(({ message }) => {
-          this.JwtAuthService.clear();
+          this.jwtAuthService.clear();
 
           return { message };
         })

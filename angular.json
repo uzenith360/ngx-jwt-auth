@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "jwt-auth": {
+    "ngx-jwt-auth": {
       "projectType": "library",
-      "root": "projects/jwt-auth",
-      "sourceRoot": "projects/jwt-auth/src",
+      "root": "projects/ngx-jwt-auth",
+      "sourceRoot": "projects/ngx-jwt-auth/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/jwt-auth/ng-package.json"
+            "project": "projects/ngx-jwt-auth/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/jwt-auth/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngx-jwt-auth/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/jwt-auth/tsconfig.lib.json"
+              "tsConfig": "projects/ngx-jwt-auth/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,7 +27,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/jwt-auth/tsconfig.spec.json",
+            "tsConfig": "projects/ngx-jwt-auth/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -36,30 +36,30 @@
         }
       }
     },
-    "jwt-auth-example-app": {
+    "ngx-jwt-auth-example-app": {
       "projectType": "application",
       "schematics": {},
-      "root": "projects/jwt-auth-example-app",
-      "sourceRoot": "projects/jwt-auth-example-app/src",
+      "root": "projects/ngx-jwt-auth-example-app",
+      "sourceRoot": "projects/ngx-jwt-auth-example-app/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/jwt-auth-example-app",
-            "index": "projects/jwt-auth-example-app/src/index.html",
-            "main": "projects/jwt-auth-example-app/src/main.ts",
+            "outputPath": "dist/ngx-jwt-auth-example-app",
+            "index": "projects/ngx-jwt-auth-example-app/src/index.html",
+            "main": "projects/ngx-jwt-auth-example-app/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/jwt-auth-example-app/tsconfig.app.json",
+            "tsConfig": "projects/ngx-jwt-auth-example-app/tsconfig.app.json",
             "assets": [
-              "projects/jwt-auth-example-app/src/favicon.ico",
-              "projects/jwt-auth-example-app/src/assets"
+              "projects/ngx-jwt-auth-example-app/src/favicon.ico",
+              "projects/ngx-jwt-auth-example-app/src/assets"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "projects/jwt-auth-example-app/src/styles.css"
+              "projects/ngx-jwt-auth-example-app/src/styles.css"
             ],
             "scripts": []
           },
@@ -94,10 +94,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "jwt-auth-example-app:build:production"
+              "browserTarget": "ngx-jwt-auth-example-app:build:production"
             },
             "development": {
-              "browserTarget": "jwt-auth-example-app:build:development"
+              "browserTarget": "ngx-jwt-auth-example-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -105,7 +105,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "jwt-auth-example-app:build"
+            "browserTarget": "ngx-jwt-auth-example-app:build"
           }
         },
         "test": {
@@ -115,14 +115,14 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/jwt-auth-example-app/tsconfig.spec.json",
+            "tsConfig": "projects/ngx-jwt-auth-example-app/tsconfig.spec.json",
             "assets": [
-              "projects/jwt-auth-example-app/src/favicon.ico",
-              "projects/jwt-auth-example-app/src/assets"
+              "projects/ngx-jwt-auth-example-app/src/favicon.ico",
+              "projects/ngx-jwt-auth-example-app/src/assets"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "projects/jwt-auth-example-app/src/styles.css"
+              "projects/ngx-jwt-auth-example-app/src/styles.css"
             ],
             "scripts": []
           }

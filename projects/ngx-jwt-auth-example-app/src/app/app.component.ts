@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthManagerService } from 'jwt-auth';
+import { AuthManagerService } from 'ngx-jwt-auth';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,7 @@ import { AuthManagerService } from 'jwt-auth';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'jwt-auth-example-app';
+  title = 'ngx-jwt-auth-example-app';
 
   constructor(private readonly authManagerService: AuthManagerService){
     this.init ();

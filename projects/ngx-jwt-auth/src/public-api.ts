@@ -1,5 +1,5 @@
 /*
- * Public API Surface of jwt-auth
+ * Public API Surface of ngx-jwt-auth
  */
 
 export * from './lib/environment-config.interface';

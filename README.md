@@ -1,4 +1,4 @@
-# ngx-jwt-auth
+# ngx-ngx-jwt-auth
 
 An Angular JWT authentication library with authentication service, route guard, interceptor and login modal to get your Angular app authentication setup in a breeze 🌬️
 
