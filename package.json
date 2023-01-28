@@ -10,6 +10,7 @@
     "build:ngx-jwt-auth": "npm run clean && ng build ngx-jwt-auth && pwd && ls -a",
     "watch": "ng build --watch --configuration development",
     "prepack": "npm run build:ngx-jwt-auth",
+    "postversion": "cp -r package.json ngx-jwt-auth && cp -r npm-shrinkwrap.json ngx-jwt-auth",
     "test": "ng test ngx-jwt-auth",
     "prepare": "husky install"
   },
@@ -29,7 +30,8 @@
   "homepage": "https://github.com/uzenith360/ngx-jwt-auth#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
-    "access": "public"
+    "access": "public",
+    "tag": "latest"
   },
   "files": [
     "dist/**/*"
@@ -89,12 +91,17 @@
           "changelogFile": "CHANGELOG.md"
         }
       ],
-      "@semantic-release/npm",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "dist/ngx-jwt-auth/"
+        }
+      ],
       "@semantic-release/github",
       [
         "@semantic-release/git",
         {
-          "assets": ["CHANGELOG.md", "dist/**"],
+          "assets": ["CHANGELOG.md", "dist/ngx-jwt-auth/**", "package.json", "npm-shrinkwrap.json"],
           "message": "chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
       ]

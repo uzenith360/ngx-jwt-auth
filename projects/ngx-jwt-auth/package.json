@@ -1,6 +1,11 @@
 {
   "name": "ngx-jwt-auth",
   "version": "0.0.1",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public",
+    "tag": "latest"
+  },
   "peerDependencies": {
     "@angular/common": "^15.0.0",
     "@angular/core": "^15.0.0",
