@@ -41,18 +41,18 @@ jobs:
    # Redundant cos tests workflow has already been run
     # - name: Test
     #   run: npm run test:unit --if-present
-    - name: Build
-      run: npm run build 
+  # Semantic plugin already builds the project
+    # - name: Build
+    #   run: npm run build 
     - name: Create .npmrc file
       run: |
         echo registry=https://registry.npmjs.org/ > .npmrc
         echo @uzenith360:registry=https://npm.pkg.github.com/ > .npmrc
         echo '//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN  }}' >> .npmrc
-    - name: Change directory to library folder
-      run: cd dist/ngx-jwt-auth
+    # - name: Change directory to library folder
+    #   run: cd dist/ngx-jwt-auth
     - name: Release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      # run: npx semantic-release
-      run: npm run semantic-release
+      run: npx semantic-release

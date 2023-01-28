@@ -15,7 +15,11 @@ module.exports = {
           changelogFile: 'CHANGELOG.md'
         }
       ],
-      '@semantic-release/npm',
+      // '@semantic-release/npm',
+      [
+        '@semantic-release/npm', 
+        { "pkgRoot": "./dist/ngx-jwt-auth" }
+      ],
       '@semantic-release/github',
       [
         '@semantic-release/git',

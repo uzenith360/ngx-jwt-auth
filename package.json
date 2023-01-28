@@ -10,8 +10,7 @@
     "watch": "ng build --watch --configuration development",
     "prepack": "npm run build",
     "test": "ng test ngx-jwt-auth",
-    "prepare": "husky install",
-    "semantic-release": "semantic-release"
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
