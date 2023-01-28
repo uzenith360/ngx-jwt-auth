@@ -81,7 +81,7 @@
       [
         "@semantic-release/npm",
         {
-          "pkgRoot": "dist/ngx-jwt-auth/"
+          "pkgRoot": "projects/ngx-jwt-auth/"
         }
       ],
       "@semantic-release/release-notes-generator",
