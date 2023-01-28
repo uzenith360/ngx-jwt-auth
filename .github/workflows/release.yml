@@ -48,9 +48,10 @@ jobs:
       run: npm run build 
     - name: Create .npmrc file
       run: |
-        echo registry=https://registry.npmjs.org/ > .npmrc
-        echo @uzenith360:registry=https://npm.pkg.github.com/ > .npmrc
-        echo '//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN  }}' >> .npmrc
+        mkdir ngx-jwt-auth
+        echo registry=https://registry.npmjs.org/ > ngx-jwt-auth/.npmrc
+        echo @uzenith360:registry=https://npm.pkg.github.com/ > ngx-jwt-auth/.npmrc
+        echo '//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN  }}' >> ngx-jwt-auth/.npmrc
     # - name: Change directory to library folder
     #   run: cd dist/ngx-jwt-auth
     # - name: Copy package.json to root dist folder
