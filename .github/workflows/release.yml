@@ -53,6 +53,8 @@ jobs:
         echo '//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN  }}' >> .npmrc
     # - name: Change directory to library folder
     #   run: cd dist/ngx-jwt-auth
+    - name: Copy package.json to root dist folder
+      run: cp package.json dist/ngx-jwt-auth
     - name: Release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
