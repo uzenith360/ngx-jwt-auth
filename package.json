@@ -7,7 +7,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "npm run clean && ng build ngx-jwt-auth",
-    "build:ngx-jwt-auth": "npm run clean && ng build ngx-jwt-auth && cp -r dist/ngx-jwt-auth .",
+    "build:ngx-jwt-auth": "npm run clean && ng build ngx-jwt-auth",
     "watch": "ng build --watch --configuration development",
     "prepack": "npm run build:ngx-jwt-auth",
     "test": "ng test ngx-jwt-auth",
@@ -75,6 +75,30 @@
   "release": {
     "branches": [
       "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "dist/ngx-jwt-auth/"
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md"
+          ]
+        }
+      ]
     ]
   }
 }
