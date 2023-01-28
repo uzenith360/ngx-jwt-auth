@@ -1,0 +1,7 @@
+export default class HttpError extends Error {
+    constructor(status, code) {
+        super(status);
+        this.code = code;
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaHR0cC1lcnJvci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1qd3QtYXV0aC9zcmMvbGliL2h0dHAtZXJyb3IudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxDQUFDLE9BQU8sT0FBTyxTQUFVLFNBQVEsS0FBSztJQUN4QyxZQUFZLE1BQWMsRUFBUyxJQUFhO1FBQzVDLEtBQUssQ0FBQyxNQUFNLENBQUMsQ0FBQztRQURpQixTQUFJLEdBQUosSUFBSSxDQUFTO0lBRWhELENBQUM7Q0FDSiIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBkZWZhdWx0IGNsYXNzIEh0dHBFcnJvciBleHRlbmRzIEVycm9yIHtcbiAgICBjb25zdHJ1Y3RvcihzdGF0dXM6IHN0cmluZywgcHVibGljIGNvZGU/OiBudW1iZXIpe1xuICAgICAgICBzdXBlcihzdGF0dXMpO1xuICAgIH1cbn1cbiJdfQ==
