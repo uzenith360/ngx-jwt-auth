@@ -48,7 +48,6 @@ jobs:
       run: npm run build 
     - name: Create .npmrc file
       run: |
-        mkdir ngx-jwt-auth
         echo registry=https://registry.npmjs.org/ > ngx-jwt-auth/.npmrc
         echo @uzenith360:registry=https://npm.pkg.github.com/ > ngx-jwt-auth/.npmrc
         echo '//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN  }}' >> ngx-jwt-auth/.npmrc
