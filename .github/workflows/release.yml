@@ -34,8 +34,8 @@ jobs:
     - name: Install dependencies
       run: npx ci
       # run: npm ci
-    # - name: Install semantic-release extra plugins
-    #   run: npm install --save-dev @semantic-release/changelog @semantic-release/git
+    - name: Install semantic-release extra plugins
+      run: npm install --save-dev @semantic-release/changelog @semantic-release/git
     # - name: Install semantic-release-monorepo
     #   run: npm install -D semantic-release semantic-release-monorepo  
     # - name: Lint
