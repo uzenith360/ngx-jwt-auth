@@ -34,10 +34,10 @@ jobs:
     - name: Install dependencies
       run: npx ci
       # run: npm ci
-    # - name: Install semantic-release extra plugins
-    #   run: npm install --save-dev @semantic-release/changelog @semantic-release/git
-    - name: Install semantic-release-monorepo
-      run: npm install -D semantic-release semantic-release-monorepo  
+    - name: Install semantic-release extra plugins
+      run: npm install --save-dev @semantic-release/changelog @semantic-release/git
+    # - name: Install semantic-release-monorepo
+    #   run: npm install -D semantic-release semantic-release-monorepo  
     # - name: Lint
     #   run: npm run lint-fix
    # Redundant cos tests workflow has already been run
@@ -57,5 +57,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      # run: npx semantic-release
-      run: npm run semantic-release -e semantic-release-monorepo
+      run: npx semantic-release

@@ -1,4 +1,5 @@
 module.exports = {
+    pkgRoot: 'dist/@ngx-jwt-auth/angular',
     branches: [
       'main',
       {
