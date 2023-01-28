@@ -15,9 +15,7 @@ module.exports = {
           changelogFile: 'CHANGELOG.md'
         }
       ],
-      ["@semantic-release/npm", {
-        "pkgRoot": "dist/ngx-jwt-auth",
-      }],
+      '@semantic-release/npm',
       '@semantic-release/github',
       [
         '@semantic-release/git',
@@ -26,5 +24,6 @@ module.exports = {
           message: 'chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
         }
       ]
-    ]
+    ],
+    "extends": "semantic-release-monorepo"
   }
