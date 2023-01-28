@@ -15,16 +15,12 @@ module.exports = {
           changelogFile: 'CHANGELOG.md'
         }
       ],
-      // '@semantic-release/npm',
-      [
-        '@semantic-release/npm', 
-        { "pkgRoot": "./dist/ngx-jwt-auth" }
-      ],
+      '@semantic-release/npm',
       '@semantic-release/github',
       [
         '@semantic-release/git',
         {
-          assets: ['CHANGELOG.md', 'dist/**'],
+          assets: ['CHANGELOG.md', 'dist/ngx-jwt-auth/**'],
           message: 'chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
         }
       ]
