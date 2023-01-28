@@ -14,12 +14,6 @@
     "paths": {
       "ngx-jwt-auth": [
         "dist/ngx-jwt-auth"
-      ],
-      "@ngx-jwt-auth": [
-        "dist/ngx-jwt-auth"
-      ],
-      "@ngx-jwt-auth/src": [
-        "projects/ngx-jwt-auth"
       ]
     },
     "declaration": false,
