@@ -36,14 +36,11 @@ jobs:
       # run: npm ci
     - name: Install semantic-release extra plugins
       run: npm install --save-dev @semantic-release/changelog @semantic-release/git
-    # - name: Install semantic-release-monorepo
-    #   run: npm install -D semantic-release semantic-release-monorepo  
     # - name: Lint
     #   run: npm run lint-fix
    # Redundant cos tests workflow has already been run
     # - name: Test
     #   run: npm run test:unit --if-present
-  # Semantic plugin already builds the project
     - name: Build
       run: npm run build 
     - name: Create .npmrc file
@@ -51,16 +48,8 @@ jobs:
         echo 'registry=https://registry.npmjs.org/' >> dist/ngx-jwt-auth/.npmrc
         echo '@uzenith360:registry=https://npm.pkg.github.com/' >> dist/ngx-jwt-auth/.npmrc
         echo '//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN  }}' >> dist/ngx-jwt-auth/.npmrc
-        pwd
-        ls -a
-    # - name: Change directory to library folder
-    #   run: cd dist/ngx-jwt-auth
-    # - name: Copy package.json to root dist folder
-    #   run: cp package.json dist/ngx-jwt-auth
     - name: Release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      run: ls -a dist/ngx-jwt-auth/ && npx semantic-release
-    - name: Change directory back to dist
-      run: cd ../
+      run: npx semantic-release
