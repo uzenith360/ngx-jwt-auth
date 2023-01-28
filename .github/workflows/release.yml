@@ -61,6 +61,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      run: npx semantic-release
+      run: ls -a dist/ngx-jwt-auth/ && npx semantic-release
     - name: Change directory back to dist
       run: cd ../
