@@ -1,6 +1,6 @@
 {
   "name": "ngx-jwt-auth",
-  "version": "1.0.38",
+  "version": "1.0.39",
   "peerDependencies": {
     "@angular/common": "^15.0.0",
     "@angular/core": "^15.0.0",

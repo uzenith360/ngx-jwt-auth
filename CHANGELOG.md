@@ -1,3 +1,10 @@
+## [1.0.39](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.38...v1.0.39) (2023-01-28)
+
+
+### Bug Fixes
+
+* **ngx-jwt-auth:** build issue where full path of dist/library folder is pushed to npm ([ddc0976](https://github.com/uzenith360/ngx-jwt-auth/commit/ddc09762b981f3c6a2b84ee4377c4599ade6ab2e))
+
 ## [1.0.38](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.37...v1.0.38) (2023-01-28)
 
 
