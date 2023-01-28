@@ -59,6 +59,8 @@
     "@angular/compiler-cli": "^15.0.4",
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/git": "^10.0.1",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "autoprefixer": "^10.4.13",
@@ -101,7 +103,12 @@
       [
         "@semantic-release/git",
         {
-          "assets": ["CHANGELOG.md", "dist/ngx-jwt-auth/**", "package.json", "npm-shrinkwrap.json"],
+          "assets": [
+            "CHANGELOG.md",
+            "dist/ngx-jwt-auth/**",
+            "package.json",
+            "npm-shrinkwrap.json"
+          ],
           "message": "chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
       ]
