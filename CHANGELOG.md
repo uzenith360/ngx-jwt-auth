@@ -1,3 +1,10 @@
+## [1.0.45](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.44...v1.0.45) (2023-01-29)
+
+
+### Bug Fixes
+
+* remove browser animations module to fix the Error: Providers from the  have already been loaded ([ab093a1](https://github.com/uzenith360/ngx-jwt-auth/commit/ab093a1e22a3b96e6641a1a52ba2d33094eebf8e))
+
 ## [1.0.44](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.43...v1.0.44) (2023-01-28)
 
 
