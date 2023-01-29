@@ -18,7 +18,6 @@ import { AuthInterceptorService } from './auth-interceptor.service';
 import { AuthManagerGuard } from './auth-manager.guard';
 import { EnvironmentConfig } from './environment-config.interface';
 import EnvironmentConfigService from './environment-config.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     MatDialogModule,
     MatRippleModule,
-    BrowserAnimationsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -55,7 +53,7 @@ export class JwtAuthModule {
           provide: EnvironmentConfigService,
           useValue: config,
         }
-      ],
+      ]
     }
   }
 }
