@@ -1,3 +1,10 @@
+## [1.0.49](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.48...v1.0.49) (2023-02-01)
+
+
+### Bug Fixes
+
+* css padding adjustment ([7266dae](https://github.com/uzenith360/ngx-jwt-auth/commit/7266dae02fd637bea40f2dc3a8dcec560dba4112))
+
 ## [1.0.48](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.47...v1.0.48) (2023-02-01)
 
 
