@@ -9,7 +9,7 @@ An Angular JWT authentication library with authentication service, route guard, 
 Refer to the example app for now, I will find time to do a proper documentation. 
 
 ## Post Installation
-After installation, please add the following code to the assets section of angular.json `"node_modules/@uzenith360/ngx-jwt-auth/assets/styles.css"` or add this to your project stylesheet file `@import 'node_modules/@uzenith360/ngx-jwt-auth/assets/styles.css';` whichever is more suitable for your project
+After installation, please add the following code to the styles section of angular.json `"node_modules/@uzenith360/ngx-jwt-auth/assets/styles.css"` or add this code to your project stylesheet file `@import 'node_modules/@uzenith360/ngx-jwt-auth/assets/styles.css';` whichever is more suitable for your project
 
 ## Support
 
