@@ -3,5 +3,6 @@
   "dest": "../../dist/ngx-jwt-auth",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": ["./assets"]
 }
