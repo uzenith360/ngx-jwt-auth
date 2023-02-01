@@ -1,3 +1,12 @@
+## [1.0.50](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.49...v1.0.50) (2023-02-01)
+
+
+### Bug Fixes
+
+* add jwt-and-user interface ([265fb9e](https://github.com/uzenith360/ngx-jwt-auth/commit/265fb9e70038a50bc5f04f8ebfc11bfda8e438c2))
+* add jwt-and-user interface ([05632ab](https://github.com/uzenith360/ngx-jwt-auth/commit/05632abafafdfaf7e697b426287c4eb473ef2595))
+* add jwt-and-user interface ([bc02485](https://github.com/uzenith360/ngx-jwt-auth/commit/bc02485b97e3678f8b430da596d389bee1250ad6))
+
 ## [1.0.49](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.48...v1.0.49) (2023-02-01)
 
 
