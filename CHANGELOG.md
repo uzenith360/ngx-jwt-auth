@@ -1,3 +1,10 @@
+## [1.0.46](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.45...v1.0.46) (2023-02-01)
+
+
+### Bug Fixes
+
+* update css build and export to standard practice ([e9f763b](https://github.com/uzenith360/ngx-jwt-auth/commit/e9f763ba71cda519194f4df489e422571754af1a))
+
 ## [1.0.45](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.44...v1.0.45) (2023-01-29)
 
 
