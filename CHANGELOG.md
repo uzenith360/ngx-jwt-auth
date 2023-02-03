@@ -1,3 +1,10 @@
+## [1.0.51](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.50...v1.0.51) (2023-02-01)
+
+
+### Bug Fixes
+
+* add @auth0/angular-jwt to library package.json ([9964073](https://github.com/uzenith360/ngx-jwt-auth/commit/99640733602734bdabd6a99317b993791718acfb))
+
 ## [1.0.50](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.49...v1.0.50) (2023-02-01)
 
 
