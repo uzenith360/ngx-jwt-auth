@@ -10,7 +10,8 @@ Refer to the example app for now, I will find time to do a proper documentation.
 
 ## Post Installation
 
-After installation, please add the following code to the styles section of angular.json `"node_modules/@uzenith360/ngx-jwt-auth/assets/styles.css"` or add this code to your project stylesheet file `@import 'node_modules/@uzenith360/ngx-jwt-auth/assets/styles.css';` whichever is more suitable for your project
+After installation, please add the following code to the styles section of angular.json `"node_modules/@uzenith360/ngx-jwt-auth/assets/styles.css"` or add this code to your project stylesheet file `@import 'node_modules/@uzenith360/ngx-jwt-auth/assets/styles.css';` whichever is more suitable for your project.
+**Important: Be sure to add this before your project css styles/imports, to prevent inteference with your project css styles!**
 
 ## Support
 
