@@ -1,3 +1,10 @@
+## [1.0.54](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.53...v1.0.54) (2023-02-23)
+
+
+### Bug Fixes
+
+* provider error ([b9cfebe](https://github.com/uzenith360/ngx-jwt-auth/commit/b9cfebe61c19d4846d36204b59804eab867fef45))
+
 ## [1.0.53](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.52...v1.0.53) (2023-02-03)
 
 
