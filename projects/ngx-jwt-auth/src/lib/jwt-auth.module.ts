@@ -11,7 +11,7 @@ import { AuthModalComponent } from './auth-modal/auth-modal.component';
 import { AuthManagerService } from './auth-manager.service';
 import { AuthService } from './auth.service';
 import { UserService } from './user.service';
-import { JwtHelperService } from '@auth0/angular-jwt';
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 import { JwtAuthService } from './jwt-auth.service';
 import { AuthDialogService } from './auth-dialog.service';
 import { AuthInterceptorService } from './auth-interceptor.service';
@@ -24,6 +24,7 @@ import EnvironmentConfigService from './environment-config.service';
     AuthModalComponent,
   ],
   imports: [
+    JwtModule,
     CommonModule,
     HttpClientModule,
     MatDialogModule,
@@ -32,23 +33,25 @@ import EnvironmentConfigService from './environment-config.service';
     MatFormFieldModule,
     MatInputModule,
   ],
-  providers: [],
-  exports: [],
+  // providers: [],
+  exports: [
+    JwtModule,
+  ],
 })
 export class JwtAuthModule { 
   static forRoot(config: EnvironmentConfig): ModuleWithProviders<JwtAuthModule>{
     return {
       ngModule: JwtAuthModule,
       providers: [
-        authHttpInterceptorProvider,
-        AuthInterceptorService,
-        AuthManagerService,
-        JwtAuthService,
-        AuthDialogService,
-        JwtHelperService,
+         authHttpInterceptorProvider,
+         AuthInterceptorService,
+         AuthManagerService,
+         JwtAuthService,
+         AuthDialogService,
+        // JwtHelperService,
         AuthManagerGuard,
-        AuthService,
-        UserService,
+         AuthService,
+         UserService,
         {
           provide: EnvironmentConfigService,
           useValue: config,
