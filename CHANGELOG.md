@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.54...v1.1.0) (2023-03-04)
+
+
+### Features
+
+* dynamic authId so consumers can user either phone or email for auth ([dc9b1d1](https://github.com/uzenith360/ngx-jwt-auth/commit/dc9b1d11e42b5091f2d61f9909ccde348fc4b5a8))
+
 ## [1.0.54](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.0.53...v1.0.54) (2023-02-23)
 
 
