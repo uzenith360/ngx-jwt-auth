@@ -1,4 +1,5 @@
 export interface EnvironmentConfig {
+  authIdName: string,
   tokenStoreId: string;
   loginUrl: string;
   logoutUrl: string;

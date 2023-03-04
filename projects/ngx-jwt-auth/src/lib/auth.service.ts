@@ -20,15 +20,15 @@ export class AuthService {
     private http: HttpClient,
   ) { }
 
-  public auth(email: string, password: string): Observable<{ message: string, jwt: JWT }> {
-    return this.http.post(this.config.loginUrl, { email, password })
+  public auth(authId: string, password: string): Observable<{ message: string, jwt: JWT }> {
+    return this.http.post(this.config.loginUrl, { [this.config.authIdName]: authId, password })
       .pipe(
         HttpHelpers.retry(),
         catchError(
           (err, caught: Observable<JWT>) => {
             switch (err.status) {
               case 401:
-                return throwError(() => new HttpError('Email/Password combination is incorrect', err.status));
+                return throwError(() => new HttpError('Login details are incorrect', err.status));
               case 500:
                 return throwError(() => new HttpError('Problem logging in, please try again', err.status));
               case 0:
@@ -70,10 +70,10 @@ export class AuthService {
       );
   }
 
-  public forgotPassword(email: string): Observable<void> {
+  public forgotPassword(authId: string): Observable<void> {
     return this.http.post(
       this.config.forgotPasswordUrl,
-      { email },
+      { [this.config.authIdName]: authId },
     ).pipe(
       HttpHelpers.retry(),
       catchError(
@@ -95,12 +95,12 @@ export class AuthService {
     );
   }
 
-  public resetPassword(email: string, password: string, code: string): Observable<void> {
+  public resetPassword(authId: string, password: string, code: string): Observable<void> {
     return this.http.put(
       this.config.resetPasswordUrl,
       {
         code,
-        email,
+        [this.config.authIdName]: authId,
         password,
       },
     ).pipe(

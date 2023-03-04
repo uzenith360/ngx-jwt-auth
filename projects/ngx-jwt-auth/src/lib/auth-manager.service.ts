@@ -31,8 +31,8 @@ export class AuthManagerService {
     return !this.jwtAuthService.check();
   }
 
-  public auth(email: string, password: string): Observable<{ message: string, jwt: JWT }> {
-    return this.authService.auth(email, password)
+  public auth(authId: string, password: string): Observable<{ message: string, jwt: JWT }> {
+    return this.authService.auth(authId, password)
       .pipe(
         map(({ message, jwt }) => {
           this.jwtAuthService.set(jwt);
