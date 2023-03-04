@@ -4,7 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-import {JwtInterface as JWT} from '@uzenith360/jwt-utils';
+import { JwtInterface as JWT } from '@uzenith360/jwt-utils';
 import { HttpHelpers } from './http-helpers';
 import { EnvironmentConfig } from './environment-config.interface';
 import HttpError from './http-error';
@@ -25,7 +25,7 @@ export class AuthService {
       .pipe(
         HttpHelpers.retry(),
         catchError(
-          (err, caught: Observable<JWT>) => {
+          (err, caught: Observable<{ jwt: JWT, message: string }>) => {
             switch (err.status) {
               case 401:
                 return throwError(() => new HttpError('Login details are incorrect', err.status));
@@ -38,8 +38,8 @@ export class AuthService {
           },
         ),
         map(
-          (jwt: JWT) => {
-            return { message: 'Successfully logged in', jwt };
+          (data: { jwt: JWT, message: string }) => {
+            return { message: data.message || 'Successfully logged in', jwt: data.jwt };
           },
         )
       );
