@@ -1,4 +1,4 @@
-// import User from './user.interface';
+// import {User} from './user.interface';
 
 // export default interface JWTAndUser {
 //     access_token: string;
@@ -9,9 +9,9 @@
 // }
 
 import { JwtInterface as JWT } from '@uzenith360/jwt-utils';
-import User from './user.interface';
+import { User } from './user.interface';
 
-export default interface JWTAndUser {
+export interface JWTAndUser {
     jwt: JWT;
     user: User;
 }

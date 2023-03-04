@@ -7,10 +7,10 @@ import { JwtAuthService } from './jwt-auth.service';
 import { AuthService } from './auth.service';
 
 import { AuthDialogService } from './auth-dialog.service';
-import User from './user.interface';
+import {User} from './user.interface';
 import { JwtInterface as JWT } from '@uzenith360/jwt-utils';
 import AuthError from './auth-error';
-import JWTAndUser from './jwt-and-user.interface';
+import {JWTAndUser} from './jwt-and-user.interface';
 
 @Injectable({
   providedIn: 'root'

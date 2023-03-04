@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
 
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
-import JWTAndUser from './jwt-and-user.interface';
+import {JWTAndUser} from './jwt-and-user.interface';
 
 @Injectable({
   providedIn: 'root'

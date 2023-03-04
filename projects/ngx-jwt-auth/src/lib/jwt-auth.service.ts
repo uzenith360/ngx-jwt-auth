@@ -2,10 +2,10 @@ import { Inject, Injectable } from '@angular/core';
 
 import { JwtHelperService } from '@auth0/angular-jwt';
 import {JwtInterface as JWT} from '@uzenith360/jwt-utils';
-import User from './user.interface';
+import {User} from './user.interface';
 import { EnvironmentConfig } from './environment-config.interface';
 import EnvironmentConfigService from './environment-config.service';
-import JWTAndUser from './jwt-and-user.interface';
+import {JWTAndUser} from './jwt-and-user.interface';
 
 @Injectable({
   providedIn: 'root'

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-import User from './user.interface';
+import {User} from './user.interface';
 import { HttpHelpers } from './http-helpers';
 import { EnvironmentConfig } from './environment-config.interface';
 import EnvironmentConfigService from './environment-config.service';
