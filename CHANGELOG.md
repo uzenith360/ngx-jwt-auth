@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.1.1...v1.1.2) (2023-03-04)
+
+
+### Bug Fixes
+
+* minor fixes ([8d5946e](https://github.com/uzenith360/ngx-jwt-auth/commit/8d5946ef15c81786196ec25ffe3df212a4051c57))
+
 ## [1.1.1](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.1.0...v1.1.1) (2023-03-04)
 
 
