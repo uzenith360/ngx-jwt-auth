@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 
 import { AuthDialogService } from './auth-dialog.service';
 import User from './user.interface';
-import JWT from './jwt.interface';
+import { JwtInterface as JWT } from '@uzenith360/jwt-utils';
 import AuthError from './auth-error';
 import JWTAndUser from './jwt-and-user.interface';
 
@@ -31,13 +31,13 @@ export class AuthManagerService {
     return !this.jwtAuthService.check();
   }
 
-  public auth(authId: string, password: string): Observable<{ message: string, jwt: JWT }> {
+  public auth(authId: string, password: string): Observable<{ message: string, user: User }> {
     return this.authService.auth(authId, password)
       .pipe(
-        map(({ message, jwt }) => {
+        map(({ jwt, message }) => {
           this.jwtAuthService.set(jwt);
 
-          return { message, jwt };
+          return {message, user: this.jwtAuthService.decode<User>(jwt)! }
         })
       );
   }

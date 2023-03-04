@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 
 import { JwtHelperService } from '@auth0/angular-jwt';
-import JWT from './jwt.interface';
+import {JwtInterface as JWT} from '@uzenith360/jwt-utils';
 import User from './user.interface';
 import { EnvironmentConfig } from './environment-config.interface';
 import EnvironmentConfigService from './environment-config.service';
@@ -84,7 +84,7 @@ export class JwtAuthService {
     }
   }
 
-  private decode(jwt: JWT): unknown | null {
+  public decode<T>(jwt: JWT): T | null {
     try {
       const accessToken: string | undefined
         = jwt?.access_token;

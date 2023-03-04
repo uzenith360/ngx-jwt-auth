@@ -8,7 +8,7 @@
 //     // user: User;
 // }
 
-import JWT from './jwt.interface';
+import { JwtInterface as JWT } from '@uzenith360/jwt-utils';
 import User from './user.interface';
 
 export default interface JWTAndUser {

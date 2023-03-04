@@ -4,7 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-import JWT from './jwt.interface';
+import {JwtInterface as JWT} from '@uzenith360/jwt-utils';
 import { HttpHelpers } from './http-helpers';
 import { EnvironmentConfig } from './environment-config.interface';
 import HttpError from './http-error';
