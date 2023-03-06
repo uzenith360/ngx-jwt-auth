@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { MatDialog } from '@angular/material/dialog';
 
 import { AuthManagerService } from './auth-manager.service';
-import EnvironmentConfigService from './environment-config.service';
+import { EnvironmentConfigService } from './environment-config.service';
 
 describe('AuthManagerService', () => {
   beforeEach(() => TestBed.configureTestingModule(

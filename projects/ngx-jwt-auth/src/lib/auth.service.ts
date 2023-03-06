@@ -8,7 +8,7 @@ import { JwtInterface as JWT } from '@uzenith360/jwt-utils';
 import { HttpHelpers } from './http-helpers';
 import { EnvironmentConfig } from './environment-config.interface';
 import HttpError from './http-error';
-import EnvironmentConfigService from './environment-config.service';
+import { EnvironmentConfigService } from './environment-config.service';
 
 @Injectable({
   providedIn: 'root'

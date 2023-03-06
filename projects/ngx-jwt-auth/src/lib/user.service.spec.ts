@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import EnvironmentConfigService from './environment-config.service';
+import { EnvironmentConfigService } from './environment-config.service';
 
 import { UserService } from './user.service';
 

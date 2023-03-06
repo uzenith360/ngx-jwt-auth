@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { MatDialog } from '@angular/material/dialog';
 
 import { AuthInterceptorService } from './auth-interceptor.service';
-import EnvironmentConfigService from './environment-config.service';
+import { EnvironmentConfigService } from './environment-config.service';
 
 describe('AuthInterceptorService', () => {
   beforeEach(

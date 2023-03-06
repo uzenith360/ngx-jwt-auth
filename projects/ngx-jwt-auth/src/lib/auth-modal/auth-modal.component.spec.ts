@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import EnvironmentConfigService from '../environment-config.service';
+import { EnvironmentConfigService } from '../environment-config.service';
 
 import { AuthModalComponent } from './auth-modal.component';
 

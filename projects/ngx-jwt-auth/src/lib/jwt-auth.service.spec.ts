@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import EnvironmentConfigService from './environment-config.service';
+import { EnvironmentConfigService } from './environment-config.service';
 
 import { JwtAuthService } from './jwt-auth.service';
 

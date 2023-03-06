@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { AuthService } from './auth.service';
-import EnvironmentConfigService from './environment-config.service';
+import { EnvironmentConfigService } from './environment-config.service';
 
 describe('AuthService', () => {
   beforeEach(() => TestBed.configureTestingModule(

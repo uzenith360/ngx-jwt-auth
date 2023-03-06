@@ -6,7 +6,7 @@ import { catchError, switchMap } from 'rxjs/operators';
 
 import { AuthManagerService } from './auth-manager.service';
 import { EnvironmentConfig } from './environment-config.interface';
-import EnvironmentConfigService from './environment-config.service';
+import { EnvironmentConfigService } from './environment-config.service';
 
 @Injectable({
   providedIn: 'root'

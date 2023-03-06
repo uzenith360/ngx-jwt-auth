@@ -5,7 +5,7 @@ import { Validators, UntypedFormBuilder } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import {JWTAndUser} from '../jwt-and-user.interface';
 import { SubSink } from 'subsink';
-import EnvironmentConfigService from '../environment-config.service';
+import { EnvironmentConfigService } from '../environment-config.service';
 import { EnvironmentConfig } from '../environment-config.interface';
 
 @Component({
