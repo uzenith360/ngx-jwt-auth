@@ -2,7 +2,6 @@
  * Public API Surface of ngx-jwt-auth
  */
 
-export * from './lib/environment-config.service';
 export * from './lib/environment-config.interface';
 export * from './lib/jwt-and-user.interface';
 export * from './lib/user.interface';
