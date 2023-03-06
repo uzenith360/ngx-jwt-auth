@@ -60,10 +60,10 @@ export class AuthManagerService {
       return new Promise((resolve, reject) => {
         this.authDialogService
           .open()
-          .then((jwtAndUser) => {
-            this.jwtAuthService.set(jwtAndUser.jwt);
+          .then((/*jwtAndUser*/jwt) => {
+            this.jwtAuthService.set(/*jwtAndUser.jwt*/jwt);
 
-            resolve(jwtAndUser);
+            resolve(/*jwtAndUser*/{ jwt, user: this.jwtAuthService.decode(jwt)! });
           }).catch((err) => reject(new AuthError(err?.message)));
       });
     } else {
