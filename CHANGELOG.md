@@ -1,3 +1,11 @@
+## [1.1.5](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.1.4...v1.1.5) (2023-03-06)
+
+
+### Bug Fixes
+
+* add config service in exports ([c7991fa](https://github.com/uzenith360/ngx-jwt-auth/commit/c7991fa550c3ca4f9deb22f10a2c01a199e5c652))
+* add config service in exports ([c1a51eb](https://github.com/uzenith360/ngx-jwt-auth/commit/c1a51eb330f6375177dc6913139c0ca1d0434b9a))
+
 ## [1.1.4](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.1.3...v1.1.4) (2023-03-06)
 
 
