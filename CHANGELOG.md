@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.1.6...v1.1.7) (2023-03-09)
+
+
+### Bug Fixes
+
+* add interceptorSkipUrls ([1d39ca8](https://github.com/uzenith360/ngx-jwt-auth/commit/1d39ca82ce6e180fa105717498a15a7ec26c3665))
+
 ## [1.1.6](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.1.5...v1.1.6) (2023-03-06)
 
 
