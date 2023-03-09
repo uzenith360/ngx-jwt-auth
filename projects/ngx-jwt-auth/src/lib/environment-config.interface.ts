@@ -3,6 +3,7 @@ export interface EnvironmentConfig {
   tokenStoreId: string;
   loginUrl: string;
   logoutUrl: string;
+  interceptorSkipUrls?: string[];
   superAdminPages: string[];
   forgotPasswordUrl: string;
   resetPasswordUrl: string;

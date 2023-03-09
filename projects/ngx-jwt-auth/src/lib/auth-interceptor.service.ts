@@ -21,7 +21,12 @@ export class AuthInterceptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (
       // ['login', 'forgot-password', 'reset-password'].includes(req.url.substring(req.url.lastIndexOf('/') + 1))
-      [this.config.loginUrl, this.config.forgotPasswordUrl, this.config.resetPasswordUrl].includes(req.url)
+      [
+        this.config.loginUrl,
+        this.config.forgotPasswordUrl,
+        this.config.resetPasswordUrl,
+        ...(this.config.interceptorSkipUrls || [])
+      ].includes(req.url)
       || req.headers.get("skip-interceptors")
     ) {
       return next.handle(req);
