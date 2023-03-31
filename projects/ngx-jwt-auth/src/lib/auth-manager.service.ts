@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 
 import { AuthDialogService } from './auth-dialog.service';
 import { User } from './user.interface';
-import { JwtInterface as JWT } from '@uzenith360/jwt-utils';
+import { JwtInterface as JWT, JwtInterface } from '@uzenith360/jwt-utils';
 import AuthError from './auth-error';
 import { JWTAndUser } from './jwt-and-user.interface';
 
@@ -69,6 +69,10 @@ export class AuthManagerService {
     } else {
       return Promise.reject(new AuthError('User isnt authed'));
     }
+  }
+
+  public setJWT(jwt: JwtInterface): void {
+    return this.jwtAuthService.set(jwt);
   }
 
   public getLoggedInUser(forceAuth: boolean = true): Promise<User> {
