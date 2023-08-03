@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.1.7...v1.2.0) (2023-03-31)
+
+
+### Features
+
+* add setJWT to auth manager service ([a10b4f1](https://github.com/uzenith360/ngx-jwt-auth/commit/a10b4f1dcf6becae10fffa1b4dc92806a747181b))
+
 ## [1.1.7](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.1.6...v1.1.7) (2023-03-09)
 
 
