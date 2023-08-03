@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.2.0...v1.2.1) (2023-08-03)
+
+
+### Bug Fixes
+
+* add onAuthGuardLoginUser ([a6c6143](https://github.com/uzenith360/ngx-jwt-auth/commit/a6c6143fade0befac5fe5ad815a73977686adf9d))
+
 # [1.2.0](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.1.7...v1.2.0) (2023-03-31)
 
 
