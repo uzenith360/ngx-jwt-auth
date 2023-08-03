@@ -1,3 +1,5 @@
+import { User } from "./user.interface";
+
 export interface EnvironmentConfig {
   authIdName: string,
   tokenStoreId: string;
@@ -8,4 +10,5 @@ export interface EnvironmentConfig {
   forgotPasswordUrl: string;
   resetPasswordUrl: string;
   getLoggedinUserProfileUrl: string;
+  onAuthGuardLoginUser: (user: User) => void;
 }

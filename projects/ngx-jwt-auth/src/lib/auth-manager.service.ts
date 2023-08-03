@@ -27,7 +27,7 @@ export class AuthManagerService {
   /**
    * Just check if there's auth
    */
-  private isAuth(): boolean {
+  public isAuth(): boolean {
     return !this.jwtAuthService.check();
   }
 

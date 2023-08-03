@@ -11,9 +11,9 @@ import { EnvironmentConfigService } from './environment-config.service';
 })
 export class AuthManagerGuard implements CanActivate, CanActivateChild {
   constructor(
-    @Inject(EnvironmentConfigService) private config: EnvironmentConfig,
-    private authManagerService: AuthManagerService,
-    private router: Router,
+    @Inject(EnvironmentConfigService) private readonly config: EnvironmentConfig,
+    private readonly authManagerService: AuthManagerService,
+    private readonly router: Router,
   ) { }
 
   canActivate(
@@ -31,25 +31,30 @@ export class AuthManagerGuard implements CanActivate, CanActivateChild {
     return this.checkLogin(url);
   }
 
-  checkLogin(url: string): Promise<boolean> {
+  private checkLogin(url: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
-      this.authManagerService.getLoggedInUser().then((user) => {
-        // Pages that only super admin can access
-        const superAdminRoutes: string[] = this.config.superAdminPages || [];
+      const notAuthed: boolean = !this.authManagerService.isAuth();
 
-        if (superAdminRoutes.some((route: string) => url.startsWith(`/${route}`)) && !user.isSuperAdmin) {
+      this.authManagerService.getLoggedInUser()
+        .then((user) => {
+          notAuthed && this.config.onAuthGuardLoginUser(user);
+
+          // Pages that only super admin can access
+          const superAdminRoutes: string[] = this.config.superAdminPages || [];
+
+          if (superAdminRoutes.some((route: string) => url.startsWith(`/${route}`)) && !user.isSuperAdmin) {
+            reject(false);
+
+            throw Error('Only super admins have access to this page!');
+          } else {
+            resolve(true);
+          }
+        }).catch(() => {
+          // redirect to me
+          this.router.navigate(['auth']);
+
           reject(false);
-
-          throw Error('Only super admins have access to this page!');
-        } else {
-          resolve(true);
-        }
-      }).catch(() => {
-        // redirect to me
-        this.router.navigate(['auth']);
-
-        reject(false);
-      });
+        });
     });
   }
 }
