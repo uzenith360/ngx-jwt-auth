@@ -37,7 +37,7 @@ export class AuthManagerGuard implements CanActivate, CanActivateChild {
 
       this.authManagerService.getLoggedInUser()
         .then((user) => {
-          notAuthed && this.config.onAuthGuardLoginUser(user);
+          notAuthed && this.config.onAuthGuardLoginUser && this.config.onAuthGuardLoginUser(user);
 
           // Pages that only super admin can access
           const superAdminRoutes: string[] = this.config.superAdminPages || [];

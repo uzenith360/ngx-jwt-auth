@@ -10,5 +10,5 @@ export interface EnvironmentConfig {
   forgotPasswordUrl: string;
   resetPasswordUrl: string;
   getLoggedinUserProfileUrl: string;
-  onAuthGuardLoginUser: (user: User) => void;
+  onAuthGuardLoginUser?: (user: User) => void;
 }
