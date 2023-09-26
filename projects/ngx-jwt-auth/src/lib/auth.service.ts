@@ -28,7 +28,7 @@ export class AuthService {
           (err, caught: Observable<{ jwt: JWT, message: string }>) => {
             switch (err.status) {
               case 401:
-                return throwError(() => new HttpError('Login details are incorrect', err.status));
+                return throwError(() => new HttpError('Login details are incorrect, use forgot password', err.status));
               case 500:
                 return throwError(() => new HttpError('Problem logging in, please try again', err.status));
               case 0:
