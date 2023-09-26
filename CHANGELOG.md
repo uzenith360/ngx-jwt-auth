@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.2.3...v1.2.4) (2023-09-26)
+
+
+### Bug Fixes
+
+* improve login failure error message ([0407449](https://github.com/uzenith360/ngx-jwt-auth/commit/0407449de3bc96ba44f5744730ba0892542517bb))
+
 ## [1.2.3](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.2.2...v1.2.3) (2023-08-04)
 
 
