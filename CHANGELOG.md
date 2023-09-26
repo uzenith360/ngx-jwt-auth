@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.2.2...v1.2.3) (2023-08-04)
+
+
+### Bug Fixes
+
+* unsubscribe mem leak issues ([ed2df7d](https://github.com/uzenith360/ngx-jwt-auth/commit/ed2df7d77c6f751451bcb6339cd84bcdf0cd6667))
+
 ## [1.2.2](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.2.1...v1.2.2) (2023-08-04)
 
 
