@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, Router, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, Router, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { AuthManagerService } from './auth-manager.service';
@@ -9,7 +9,7 @@ import { EnvironmentConfigService } from './environment-config.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthManagerGuard implements CanActivate, CanActivateChild {
+export class AuthManagerGuard  {
   constructor(
     @Inject(EnvironmentConfigService) private readonly config: EnvironmentConfig,
     private readonly authManagerService: AuthManagerService,
