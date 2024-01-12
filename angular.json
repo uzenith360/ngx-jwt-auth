@@ -94,10 +94,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ngx-jwt-auth-example-app:build:production"
+              "buildTarget": "ngx-jwt-auth-example-app:build:production"
             },
             "development": {
-              "browserTarget": "ngx-jwt-auth-example-app:build:development"
+              "buildTarget": "ngx-jwt-auth-example-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -105,7 +105,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-jwt-auth-example-app:build"
+            "buildTarget": "ngx-jwt-auth-example-app:build"
           }
         },
         "test": {
