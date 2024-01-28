@@ -1,3 +1,11 @@
+## [1.4.1](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.0...v1.4.1) (2024-01-28)
+
+
+### Bug Fixes
+
+* failed to read the 'localstorage' property from 'window': access is denied for this document ([125e485](https://github.com/uzenith360/ngx-jwt-auth/commit/125e485e6bbeaae75bb2b376dce5406fb541a646))
+* failed to read the 'localstorage' property from 'window': access is denied for this document ([850b106](https://github.com/uzenith360/ngx-jwt-auth/commit/850b10691f8ad4f8d7768b5882d68928fc8406bc))
+
 # [1.4.0](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.3.0...v1.4.0) (2024-01-12)
 
 
