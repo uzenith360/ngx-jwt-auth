@@ -16,8 +16,14 @@
     "@angular/material": "^17.0.5",
     "@angular/platform-browser": "^17.0.9",
     "@angular/platform-browser-dynamic": "^17.0.9",
+    "@uzenith360/in-memory-cache": "1.1.5",
+    "@uzenith360/jwt-utils": "^1.1.4",
     "@angular/router": "^17.0.9",
-    "@auth0/angular-jwt": "^5.0.2"
+    "@auth0/angular-jwt": "^5.0.2",
+    "rxjs": "~7.5.0",
+    "subsink": "^1.0.2",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.3"
   },
   "dependencies": {
     "tslib": "^2.3.0"
