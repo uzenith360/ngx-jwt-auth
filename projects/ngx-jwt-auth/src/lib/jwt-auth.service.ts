@@ -1,11 +1,12 @@
 import { Inject, Injectable } from '@angular/core';
 
 import { JwtHelperService } from '@auth0/angular-jwt';
-import {JwtInterface as JWT} from '@uzenith360/jwt-utils';
-import {User} from './user.interface';
+import { JwtInterface as JWT } from '@uzenith360/jwt-utils';
+import { User } from './user.interface';
 import { EnvironmentConfig } from './environment-config.interface';
 import { EnvironmentConfigService } from './environment-config.service';
-import {JWTAndUser} from './jwt-and-user.interface';
+import { JWTAndUser } from './jwt-and-user.interface';
+import InMemoryCache from '@uzenith360/in-memory-cache';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,25 @@ export class JwtAuthService {
   private readonly storeId: string;
   private static helper: JwtHelperService = new JwtHelperService();
 
+  private readonly getItem: (key: string) => string | null;
+  private readonly setItem: (key: string, value: string) => void;
+  private readonly removeItem: (key: string) => void;
+
   constructor(@Inject(EnvironmentConfigService) private config: EnvironmentConfig,) {
     this.storeId = config.tokenStoreId;
+
+    // handle: Failed to read the 'localStorage' property from 'Window': Access is denied for this document
+    if (this.isLocalStorageAvailable()) {
+      const inMemory: InMemoryCache<string> = new InMemoryCache();
+
+      this.getItem = (key: string) => inMemory.get(key) ?? null;
+      this.setItem = inMemory.set;
+      this.removeItem = inMemory.del;
+    } else {
+      this.getItem = localStorage.getItem;
+      this.setItem = localStorage.setItem;
+      this.removeItem = localStorage.removeItem;
+    }
   }
 
   public getJWTAndUser(): JWTAndUser | null {
@@ -57,12 +75,12 @@ export class JwtAuthService {
   // }
 
   public set(jwt: JWT): void {
-    localStorage.setItem(this.storeId, JSON.stringify(jwt));
+    this.setItem(this.storeId, JSON.stringify(jwt));
   }
 
   private get(): JWT | null {
     try {
-      const sessionItem: string | null = localStorage.getItem(this.storeId);
+      const sessionItem: string | null = this.getItem(this.storeId);
 
       if (!!sessionItem) {
         return JSON.parse(sessionItem) as JWT;
@@ -100,7 +118,24 @@ export class JwtAuthService {
   }
 
   public clear(): void {
-    localStorage.removeItem(this.storeId);
+    this.removeItem(this.storeId);
+  }
+
+  private isLocalStorageAvailable(): boolean {
+    var test = 'test';
+
+    try {
+      localStorage.setItem(test, test);
+      localStorage.removeItem(test);
+
+      return true;
+    } catch (e) {
+      console.error(e);
+
+      alert(`Your browser set to block cookies and site data, consider changing this setting.`);
+
+      return false;
+    }
   }
 
 }
