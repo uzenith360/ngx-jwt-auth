@@ -33,7 +33,6 @@ export class JwtAuthService {
       this.getItem = (key: string) => inMemory.get(key) ?? null;
       this.setItem = (key: string, value: string) => inMemory.set(key, value);
       this.removeItem = (key: string) => inMemory.del(key);
-      
     }
   }
 
