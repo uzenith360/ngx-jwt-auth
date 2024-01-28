@@ -30,7 +30,7 @@ jobs:
       # with:
       #   node-version: 'lts/*'
       with:
-        node-version: 18.x
+        node-version: 20.x
     - name: Create .npmrc file
       run: |
         echo 'registry=https://registry.npmjs.org/' >> .npmrc
