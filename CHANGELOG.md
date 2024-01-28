@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.3...v1.4.4) (2024-01-28)
+
+
+### Bug Fixes
+
+* circular json issue ([60ace89](https://github.com/uzenith360/ngx-jwt-auth/commit/60ace893794fd826750001c71106efe339208c2c))
+
 ## [1.4.3](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.2...v1.4.3) (2024-01-28)
 
 
