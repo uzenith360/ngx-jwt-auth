@@ -15,7 +15,8 @@ const config: EnvironmentConfig
   logoutUrl: '',
   resetPasswordUrl: '',
   superAdminPages: [''],
-  tokenStoreId: ''
+  tokenStoreId: '',
+  authIdName: ''
 };
 
 @NgModule({

@@ -27,12 +27,12 @@ export class JwtAuthService {
       const inMemory: InMemoryCache<string> = new InMemoryCache();
 
       this.getItem = (key: string) => inMemory.get(key) ?? null;
-      this.setItem = inMemory.set;
-      this.removeItem = inMemory.del;
+      this.setItem = (key: string, value: string) => inMemory.set(key, value);
+      this.removeItem = (key: string) => inMemory.del(key);
     } else {
-      this.getItem = localStorage.getItem;
-      this.setItem = localStorage.setItem;
-      this.removeItem = localStorage.removeItem;
+      this.getItem = (key: string) => localStorage.getItem(key);
+      this.setItem = (key: string, value: string) => localStorage.setItem(key, value);
+      this.removeItem = (key: string) => localStorage.removeItem(key);
     }
   }
 
@@ -132,7 +132,7 @@ export class JwtAuthService {
     } catch (e) {
       console.error(e);
 
-      alert(`Your browser set to block cookies and site data, consider changing this setting.`);
+      alert(`Your browser is set to block cookies and site data, consider changing this setting.`);
 
       return false;
     }
