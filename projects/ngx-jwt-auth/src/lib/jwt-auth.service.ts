@@ -24,15 +24,16 @@ export class JwtAuthService {
 
     // handle: Failed to read the 'localStorage' property from 'Window': Access is denied for this document
     if (this.isLocalStorageAvailable()) {
+      this.getItem = (key: string) => localStorage.getItem(key);
+      this.setItem = (key: string, value: string) => localStorage.setItem(key, value);
+      this.removeItem = (key: string) => localStorage.removeItem(key);
+    } else {
       const inMemory: InMemoryCache<string> = new InMemoryCache();
 
       this.getItem = (key: string) => inMemory.get(key) ?? null;
       this.setItem = (key: string, value: string) => inMemory.set(key, value);
       this.removeItem = (key: string) => inMemory.del(key);
-    } else {
-      this.getItem = (key: string) => localStorage.getItem(key);
-      this.setItem = (key: string, value: string) => localStorage.setItem(key, value);
-      this.removeItem = (key: string) => localStorage.removeItem(key);
+      
     }
   }
 
