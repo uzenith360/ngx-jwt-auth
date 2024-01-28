@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.1...v1.4.2) (2024-01-28)
+
+
+### Bug Fixes
+
+* deps ([271b79d](https://github.com/uzenith360/ngx-jwt-auth/commit/271b79d6d91320b4aff80133529d220861e47a12))
+
 ## [1.4.1](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.0...v1.4.1) (2024-01-28)
 
 
