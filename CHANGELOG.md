@@ -1,3 +1,10 @@
+## [1.4.7](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.6...v1.4.7) (2024-01-30)
+
+
+### Bug Fixes
+
+* login loop issue ([b22919a](https://github.com/uzenith360/ngx-jwt-auth/commit/b22919aea1a1d988bb1a8e93f02a207231e58be6))
+
 ## [1.4.6](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.5...v1.4.6) (2024-01-28)
 
 
