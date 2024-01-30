@@ -126,6 +126,11 @@ export class JwtAuthService {
 
     try {
       localStorage.setItem(test, test);
+
+      if (localStorage.getItem(test) !== test) {
+        return false;
+      }
+
       localStorage.removeItem(test);
 
       return true;
