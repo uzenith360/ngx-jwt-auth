@@ -1,3 +1,10 @@
+## [1.4.8](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.7...v1.4.8) (2024-03-18)
+
+
+### Bug Fixes
+
+* psd crack blocking localstorage, making it silently fail so we use inmemory storage as backup ([c1a7b23](https://github.com/uzenith360/ngx-jwt-auth/commit/c1a7b23478533768f67bfce11158659eef29b00c))
+
 ## [1.4.7](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.6...v1.4.7) (2024-01-30)
 
 
