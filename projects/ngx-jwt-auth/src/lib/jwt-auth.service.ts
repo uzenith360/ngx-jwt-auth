@@ -19,33 +19,14 @@ export class JwtAuthService {
   private readonly setItem: (key: string, value: string) => void;
   private readonly removeItem: (key: string) => void;
 
-  constructor(@Inject(EnvironmentConfigService) private config: EnvironmentConfig) {
+  constructor(@Inject(EnvironmentConfigService) private config: EnvironmentConfig,) {
     this.storeId = config.tokenStoreId;
 
     // handle: Failed to read the 'localStorage' property from 'Window': Access is denied for this document
     if (this.isLocalStorageAvailable()) {
-      // even if local storage is available, 
-      // still use inMemory cache cos of the Photoshop CRACK that makes the isLocalStorageAvailable look successfull 
-      // but nothing gets saved to browser storage and nothing can be returned
-      const inMemory: InMemoryCache<string> = new InMemoryCache();
-
-      this.getItem = (key: string) => localStorage.getItem(key) ?? inMemory.get(key) ?? null;
-
-      this.setItem = (key: string, value: string) => {
-        try {
-          localStorage.setItem(key, value)
-        } catch (e) {
-          console.error(e);
-        }
-
-        inMemory.set(key, value);
-      };
-
-      this.removeItem = (key: string) => {
-        localStorage.removeItem(key);
-
-        inMemory.del(key);
-      }
+      this.getItem = (key: string) => localStorage.getItem(key);
+      this.setItem = (key: string, value: string) => localStorage.setItem(key, value);
+      this.removeItem = (key: string) => localStorage.removeItem(key);
     } else {
       const inMemory: InMemoryCache<string> = new InMemoryCache();
 
