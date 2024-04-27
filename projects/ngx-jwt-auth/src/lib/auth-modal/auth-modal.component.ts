@@ -13,7 +13,7 @@ import { lastValueFrom } from 'rxjs';
   styleUrls: ['./auth-modal.component.css'],
 })
 export class AuthModalComponent implements OnInit {
-  public isJWTExists: boolean= !!this.config.tryPINLogin && this.jwtExists;
+  public isJWTExists: boolean = !!this.config.tryPINLogin && this.jwtExists;
   public loginForm = new UntypedFormBuilder().group({
     [this.config.authIdName]: ['', this.isJWTExists ? Validators.nullValidator : Validators.required],
     password: ['', this.isJWTExists ? Validators.nullValidator : Validators.required],
@@ -21,7 +21,10 @@ export class AuthModalComponent implements OnInit {
   });
   public authIdName: string = this.config.authIdName;
   public isSubmitting = false;
-  public submitMessage!: string;
+  public submitMessage: string
+    = this.isJWTExists
+      ? 'Please input your secure PIN to log in to your account'
+      : 'Please input your login details to log in to your account';
   public hide: boolean = true;
 
   constructor(
