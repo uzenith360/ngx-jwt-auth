@@ -1,6 +1,6 @@
-<h1 mat-dialog-title class="!text-center !font-semibold !text-md !mb-4">Login</h1>
+<h1 mat-dialog-title class="!text-center !font-semibold !text-md">Login</h1>
 <div class="!pb-0" mat-dialog-content>
-  <small *ngIf="submitMessage">{{submitMessage}}</small>
+  <p class="!mb-4"><small *ngIf="submitMessage">{{submitMessage}}</small></p>
   <form [formGroup]="loginForm" (ngSubmit)="login()">
     <ng-container *ngIf="!isJWTExists else pinLogin">
       <mat-form-field class="w-full" appearance="fill">
