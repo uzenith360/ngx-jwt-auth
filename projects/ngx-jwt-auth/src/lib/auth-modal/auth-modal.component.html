@@ -38,10 +38,10 @@
 </div>
 <div mat-dialog-actions>
   <div class="justify-between flex w-full p-4 !pt-0">
-    <button class="px-4 py-2" mat-button matRipple [mat-dialog-close]="null" aria-label="Cancel Button">Cancel</button>
+    <button class="px-4 py-2" matRipple [mat-dialog-close]="null" aria-label="Cancel Button">Cancel</button>
     <button
       class="px-4 py-2 !cursor-pointer shadow-sm rounded-sm bg-blue-900 text-white hover:text-blue-900 hover:bg-white"
-      mat-button matRipple [disabled]="!loginForm.valid || isSubmitting" aria-label="Login Button"
+      matRipple [disabled]="!loginForm.valid || isSubmitting" aria-label="Login Button"
       (click)="login()">Login</button>
   </div>
 </div>
