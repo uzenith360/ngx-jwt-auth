@@ -20,6 +20,32 @@ export class AuthService {
     private http: HttpClient,
   ) { }
 
+  public authWithPIN(pin: string): Observable<{ message: string, jwt: JWT }> {
+    return this.http.post(this.config.pinLoginUrl!, { pin })
+      .pipe(
+        HttpHelpers.retry(),
+        catchError(
+          (err, caught: Observable<{ jwt: JWT, message: string }>) => {
+            switch (err.status) {
+              case 400:
+              case 401:
+                return throwError(() => new HttpError('Login details are incorrect, use forgot password', err.status));
+              case 500:
+                return throwError(() => new HttpError('Problem logging in, please try again', err.status));
+              case 0:
+              default:
+                return throwError(() => new HttpError('Problem logging in, please check network and try again', err.status));
+            };
+          },
+        ),
+        map(
+          (data: { jwt: JWT, message: string }) => {
+            return { message: data.message || 'Successfully logged in', jwt: data.jwt };
+          },
+        )
+      );
+  }
+
   public auth(authId: string, password: string): Observable<{ message: string, jwt: JWT }> {
     return this.http.post(this.config.loginUrl, { [this.config.authIdName]: authId, password })
       .pipe(

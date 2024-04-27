@@ -13,10 +13,12 @@ const config: EnvironmentConfig
   getLoggedinUserProfileUrl: '',
   loginUrl: '',
   logoutUrl: '',
+  pinLoginUrl: '',
+  tryPINLogin: true,
   resetPasswordUrl: '',
   superAdminPages: [''],
   tokenStoreId: '',
-  authIdName: ''
+  authIdName: 'Phone',
 };
 
 @NgModule({

@@ -59,6 +59,7 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/ngx-jwt-auth/assets/styles.css",
               "projects/ngx-jwt-auth-example-app/src/styles.css"
             ],
             "scripts": []

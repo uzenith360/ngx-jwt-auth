@@ -17,7 +17,7 @@ export class AuthDialogService {
 
   constructor(private dialog: MatDialog) { }
 
-  open(): Promise</*JWTAndUser*/JwtInterface> {
+  open(jwtExists: boolean): Promise</*JWTAndUser*/JwtInterface> {
     if (AuthDialogService.isInstanceOpen === true) {
       return new Promise((resolve, reject) => {
         lastValueFrom(AuthDialogService.loginSuccessSubject$)
@@ -35,7 +35,7 @@ export class AuthDialogService {
       const dialogRef = this.dialog.open(AuthModalComponent, {
         restoreFocus: true,
         disableClose: true,
-        data: {}
+        data: jwtExists,
       });
 
       lastValueFrom(dialogRef.afterClosed())

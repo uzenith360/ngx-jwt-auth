@@ -59,7 +59,7 @@ export class AuthManagerService {
     } else if (force) {
       return new Promise((resolve, reject) => {
         this.authDialogService
-          .open()
+          .open(this.jwtAuthService.jwtExists)
           .then((/*jwtAndUser*/jwt) => {
             this.jwtAuthService.set(/*jwtAndUser.jwt*/jwt);
 
@@ -122,3 +122,10 @@ export class AuthManagerService {
     this.redirectUrl = undefined;
   }
 }
+
+
+/**
+ * Do after popup login event handle to set the pin
+ * add url endpoint for regenerate auth via pin
+ * add option for login with pin instead of password
+ */

@@ -143,4 +143,7 @@ export class JwtAuthService {
     }
   }
 
+  get jwtExists(): boolean {
+    return !!this.getJWT()?.access_token;
+  }
 }
