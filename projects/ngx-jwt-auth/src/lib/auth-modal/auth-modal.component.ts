@@ -22,6 +22,7 @@ export class AuthModalComponent implements OnInit {
   public authIdName: string = this.config.authIdName;
   public isSubmitting = false;
   public submitMessage!: string;
+  public hide: boolean = true;
 
   constructor(
     @Optional() public dialogRef: MatDialogRef<AuthModalComponent>,

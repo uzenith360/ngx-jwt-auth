@@ -5,7 +5,8 @@
     <ng-container *ngIf="!isJWTExists else pinLogin">
       <mat-form-field class="w-full" appearance="fill">
         <mat-label>{{authIdName|titlecase}}</mat-label>
-        <input type="text" [formControlName]="authIdName" [readonly]="isSubmitting" matInput [required]="!isJWTExists" />
+        <input type="text" [formControlName]="authIdName" [readonly]="isSubmitting" matInput
+          [required]="!isJWTExists" />
         <mat-error *ngIf="loginFormControls[authIdName].hasError('required')">{{authIdName|titlecase}} is required.
         </mat-error>
         <!-- <mat-error *ngIf="loginFormControls.email?.errors?.email">Email is invalid.
@@ -22,8 +23,12 @@
     <ng-template #pinLogin>
       <mat-form-field class="w-full pin-input" appearance="fill">
         <mat-label>PIN</mat-label>
-        <input class="!text-center" type="text" formControlName="pin" [readonly]="isSubmitting" matInput
-          autocomplete="off" [required]="isJWTExists" />
+        <input class="!text-center" [type]="hide ? 'password' : 'text'" formControlName="pin" [readonly]="isSubmitting"
+          matInput autocomplete="new-password" [required]="isJWTExists" />
+        <button mat-icon-button matSuffix (click)="hide = !hide; false"
+          [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </button>
         <mat-error *ngIf="loginFormControls['pin'].hasError('required')">PIN is required.
         </mat-error>
       </mat-form-field>

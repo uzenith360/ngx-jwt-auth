@@ -9,6 +9,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
 import { AuthManagerService } from './auth-manager.service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { AuthService } from './auth.service';
 import { UserService } from './user.service';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -31,7 +33,9 @@ import { EnvironmentConfigService } from './environment-config.service';
     MatRippleModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    MatButtonModule,
     MatInputModule,
+    MatIconModule,
   ],
   // providers: [],
   exports: [

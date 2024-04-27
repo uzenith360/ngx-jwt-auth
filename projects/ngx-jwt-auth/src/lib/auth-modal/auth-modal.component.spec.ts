@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { EnvironmentConfigService } from '../environment-config.service';
 
 import { AuthModalComponent } from './auth-modal.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 describe('AuthModalComponent', () => {
   let component: AuthModalComponent;
@@ -17,7 +19,7 @@ describe('AuthModalComponent', () => {
     waitForAsync(
       () => {
         TestBed.configureTestingModule({
-          declarations: [AuthModalComponent], imports: [MatFormFieldModule, ReactiveFormsModule, MatDialogModule, MatInputModule, BrowserAnimationsModule],
+          declarations: [AuthModalComponent], imports: [MatFormFieldModule, ReactiveFormsModule, MatDialogModule, MatInputModule, MatButtonModule, MatIconModule, BrowserAnimationsModule],
           providers: [
             { provide: HttpClient, useValue: {} },
             { provide: MAT_DIALOG_DATA, useValue: {} },
