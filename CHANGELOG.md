@@ -1,3 +1,10 @@
+## [1.4.15](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.14...v1.4.15) (2024-04-28)
+
+
+### Bug Fixes
+
+* add getUserSync to auth-manager-service ([04655f1](https://github.com/uzenith360/ngx-jwt-auth/commit/04655f100d3b6f18d0984b09d203b3d98bc54acd))
+
 ## [1.4.14](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.13...v1.4.14) (2024-04-27)
 
 
