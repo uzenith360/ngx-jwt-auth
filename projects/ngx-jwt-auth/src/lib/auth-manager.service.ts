@@ -121,6 +121,10 @@ export class AuthManagerService {
   public resetRedirectUrl(): void {
     this.redirectUrl = undefined;
   }
+
+  public getUserSync(): User | null {
+    return this.jwtAuthService.getUser();
+  }
 }
 
 
