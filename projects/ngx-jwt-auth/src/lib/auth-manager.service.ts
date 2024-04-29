@@ -11,11 +11,14 @@ import { User } from './user.interface';
 import { JwtInterface as JWT, JwtInterface } from '@uzenith360/jwt-utils';
 import AuthError from './auth-error';
 import { JWTAndUser } from './jwt-and-user.interface';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthManagerService {
+  public static jwtHelperService: JwtHelperService = new JwtHelperService();
+  
   private redirectUrl?: string;
 
   constructor(
