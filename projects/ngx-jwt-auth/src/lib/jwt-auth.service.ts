@@ -46,7 +46,7 @@ export class JwtAuthService {
       } : null;
   }
 
-  public getJWT(): JWT | null {
+  public getJWT(): JWT & { old_access_token?: string } | null {
     return this.get();
     // const jwt: JWT | null = this.get();
 
@@ -74,16 +74,16 @@ export class JwtAuthService {
   //   }
   // }
 
-  public set(jwt: JWT): void {
+  public set(jwt: JWT & { old_access_token?: string }): void {
     this.setItem(this.storeId, JSON.stringify(jwt));
   }
 
-  private get(): JWT | null {
+  private get(): JWT & { old_access_token?: string } | null {
     try {
       const sessionItem: string | null = this.getItem(this.storeId);
 
       if (!!sessionItem) {
-        return JSON.parse(sessionItem) as JWT;
+        return JSON.parse(sessionItem) as JWT & { old_access_token?: string };
       } else {
         return null;
       }
@@ -121,6 +121,14 @@ export class JwtAuthService {
     this.removeItem(this.storeId);
   }
 
+  public expire(): void {
+    const jwt: JWT & { old_access_token?: string } | null = this.get();
+
+    if (!!jwt) {
+      this.set({ ...jwt, old_access_token: jwt.access_token, access_token: '' })
+    }
+  }
+
   private isLocalStorageAvailable(): boolean {
     var test = 'test';
 
@@ -145,5 +153,9 @@ export class JwtAuthService {
 
   get jwtExists(): boolean {
     return !!this.getJWT()?.access_token;
+  }
+
+  get oldJWTExists(): boolean {
+    return !!this.getJWT()?.old_access_token;
   }
 }

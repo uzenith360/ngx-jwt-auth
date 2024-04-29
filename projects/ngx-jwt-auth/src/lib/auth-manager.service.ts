@@ -17,8 +17,9 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   providedIn: 'root'
 })
 export class AuthManagerService {
+  // Expose methods to handle jwt
   public static jwtHelperService: JwtHelperService = new JwtHelperService();
-  
+
   private redirectUrl?: string;
 
   constructor(
@@ -62,7 +63,7 @@ export class AuthManagerService {
     } else if (force) {
       return new Promise((resolve, reject) => {
         this.authDialogService
-          .open(this.jwtAuthService.jwtExists)
+          .open(this.jwtAuthService.oldJWTExists)
           .then((/*jwtAndUser*/jwt) => {
             this.jwtAuthService.set(/*jwtAndUser.jwt*/jwt);
 
@@ -107,6 +108,17 @@ export class AuthManagerService {
       .pipe(
         map(({ message }) => {
           this.jwtAuthService.clear();
+
+          return { message };
+        })
+      );
+  }
+
+  public expire(): Observable<any> {
+    return this.authService.logout()
+      .pipe(
+        map(({ message }) => {
+          this.jwtAuthService.expire();
 
           return { message };
         })
