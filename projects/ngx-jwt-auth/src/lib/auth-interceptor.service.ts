@@ -23,6 +23,7 @@ export class AuthInterceptorService implements HttpInterceptor {
       // ['login', 'forgot-password', 'reset-password'].includes(req.url.substring(req.url.lastIndexOf('/') + 1))
       [
         this.config.loginUrl,
+        this.config.pinLoginUrl,
         this.config.forgotPasswordUrl,
         this.config.resetPasswordUrl,
         ...(this.config.interceptorSkipUrls || [])
