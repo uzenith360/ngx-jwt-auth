@@ -90,7 +90,7 @@ export class AuthManagerService {
   public getAuthorization(forceAuth: boolean = true): Promise<string> {
     return new Promise((resolve, reject) => {
       this.getAuthAndUser(forceAuth)
-        .then(({ jwt: { access_token, token_type } }) => resolve(`${token_type} ${access_token}`))
+        .then(({ jwt: { access_token, old_access_token, token_type } }) => resolve(`${token_type} ${access_token || old_access_token}`))
         .catch((err) => reject(err));
     });
   }

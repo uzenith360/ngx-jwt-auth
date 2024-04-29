@@ -12,6 +12,6 @@ import { JwtInterface as JWT } from '@uzenith360/jwt-utils';
 import { User } from './user.interface';
 
 export interface JWTAndUser {
-    jwt: JWT;
+    jwt: JWT & { old_access_token?: string };
     user: User;
 }
