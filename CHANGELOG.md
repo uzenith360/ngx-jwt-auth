@@ -1,3 +1,10 @@
+## [1.4.16](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.15...v1.4.16) (2024-04-29)
+
+
+### Bug Fixes
+
+* expose JwtHelperService from AuthManagerService ([304c9be](https://github.com/uzenith360/ngx-jwt-auth/commit/304c9bed74daf18eedcb1963a6d3cdcea9bf8b59))
+
 ## [1.4.15](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.14...v1.4.15) (2024-04-28)
 
 
