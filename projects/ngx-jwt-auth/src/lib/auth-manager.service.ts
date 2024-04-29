@@ -63,7 +63,7 @@ export class AuthManagerService {
     } else if (force) {
       return new Promise((resolve, reject) => {
         this.authDialogService
-          .open(this.jwtAuthService.oldJWTExists)
+          .open(this.jwtAuthService.oldJWTExists ?? this.jwtAuthService.jwtExists)
           .then((/*jwtAndUser*/jwt) => {
             this.jwtAuthService.set(/*jwtAndUser.jwt*/jwt);
 
