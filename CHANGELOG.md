@@ -1,3 +1,10 @@
+## [1.4.17](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.16...v1.4.17) (2024-04-29)
+
+
+### Bug Fixes
+
+* old access token ([e8a3420](https://github.com/uzenith360/ngx-jwt-auth/commit/e8a34206a37e81082700fa3bf957a8c45494cd1e))
+
 ## [1.4.16](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.15...v1.4.16) (2024-04-29)
 
 
