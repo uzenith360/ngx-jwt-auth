@@ -36,12 +36,12 @@ export class AuthService {
           switch (err.status) {
             case 400:
             case 401:
-              return throwError(() => new HttpError('Login details are incorrect, use forgot password', err.status));
+              return throwError(() => new HttpError(err.message ?? 'Login details are incorrect, use forgot password', err.status));
             case 500:
-              return throwError(() => new HttpError('Problem logging in, please try again', err.status));
+              return throwError(() => new HttpError(err.message ?? 'Problem logging in, please try again', err.status));
             case 0:
             default:
-              return throwError(() => new HttpError('Problem logging in, please check network and try again', err.status));
+              return throwError(() => new HttpError(err.message ?? 'Problem logging in, please check network and try again', err.status));
           };
         },
       ),
