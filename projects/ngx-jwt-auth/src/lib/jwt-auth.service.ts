@@ -96,7 +96,11 @@ export class JwtAuthService {
     const jwt = this.getJWT();
 
     if (!!jwt) {
-      return JwtAuthService.helper.isTokenExpired(jwt.access_token);
+      try {
+        return JwtAuthService.helper.isTokenExpired(jwt.access_token);
+      } catch (e) {
+        return true;
+      }
     } else {
       return true;
     }
