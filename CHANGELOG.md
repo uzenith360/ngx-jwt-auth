@@ -1,3 +1,10 @@
+## [1.4.24](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.23...v1.4.24) (2024-04-30)
+
+
+### Bug Fixes
+
+* pin login failures ([5ed6bdd](https://github.com/uzenith360/ngx-jwt-auth/commit/5ed6bdd8bdd13b75b8051ae9f3c966248ca2cce9))
+
 ## [1.4.23](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.22...v1.4.23) (2024-04-29)
 
 
