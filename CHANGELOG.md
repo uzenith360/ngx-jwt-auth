@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.25...v1.5.0) (2024-11-03)
+
+
+### Features
+
+* upgrade to angular 18 ([0e8af0c](https://github.com/uzenith360/ngx-jwt-auth/commit/0e8af0c6fd4ecbcac866c7460c4fc2b35c070b18))
+
 ## [1.4.25](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.4.24...v1.4.25) (2024-05-02)
 
 
