@@ -1,7 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { authHttpInterceptorProvider } from './auth-http-interceptor-provider';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule } from '@angular/material/core';
@@ -21,27 +21,21 @@ import { AuthManagerGuard } from './auth-manager.guard';
 import { EnvironmentConfig } from './environment-config.interface';
 import { EnvironmentConfigService } from './environment-config.service';
 
-@NgModule({
-  declarations: [
-    AuthModalComponent,
-  ],
-  imports: [
-    JwtModule,
-    CommonModule,
-    HttpClientModule,
-    MatDialogModule,
-    MatRippleModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatInputModule,
-    MatIconModule,
-  ],
-  // providers: [],
-  exports: [
-    JwtModule,
-  ],
-})
+@NgModule({ declarations: [
+        AuthModalComponent,
+    ],
+    // providers: [],
+    exports: [
+        JwtModule,
+    ], imports: [JwtModule,
+        CommonModule,
+        MatDialogModule,
+        MatRippleModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatInputModule,
+        MatIconModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class JwtAuthModule {
   static forRoot(config: EnvironmentConfig): ModuleWithProviders<JwtAuthModule> {
     return {
