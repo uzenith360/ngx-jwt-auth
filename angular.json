@@ -44,11 +44,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ngx-jwt-auth-example-app",
+            "outputPath": {
+              "base": "dist/ngx-jwt-auth-example-app"
+            },
             "index": "projects/ngx-jwt-auth-example-app/src/index.html",
-            "main": "projects/ngx-jwt-auth-example-app/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -62,7 +63,8 @@
               "projects/ngx-jwt-auth/assets/styles.css",
               "projects/ngx-jwt-auth-example-app/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/ngx-jwt-auth-example-app/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -81,9 +83,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
