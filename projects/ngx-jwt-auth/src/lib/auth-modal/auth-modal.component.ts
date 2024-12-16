@@ -8,9 +8,10 @@ import { EnvironmentConfig } from '../environment-config.interface';
 import { lastValueFrom } from 'rxjs';
 
 @Component({
-  selector: 'app-auth-modal',
-  templateUrl: './auth-modal.component.html',
-  styleUrls: ['./auth-modal.component.css'],
+    selector: 'app-auth-modal',
+    templateUrl: './auth-modal.component.html',
+    styleUrls: ['./auth-modal.component.css'],
+    standalone: false
 })
 export class AuthModalComponent implements OnInit {
   public isJWTExists: boolean = !!this.config.tryPINLogin && this.jwtExists;
