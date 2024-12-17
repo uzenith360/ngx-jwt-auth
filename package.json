@@ -49,7 +49,7 @@
     "@auth0/angular-jwt": "^5.0.2",
     "@uzenith360/jwt-utils": "^1.1.4",
     "@uzenith360/in-memory-cache": "1.1.5",
-    "rxjs": "~7.5.0",
+    "rxjs": "~7.8.0",
     "subsink": "^1.0.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
