@@ -39,7 +39,7 @@ export class AuthInterceptorService implements HttpInterceptor {
 
     return from(this.authManagerService.getAuthorization())
       .pipe(
-        switchMap((authToken) => { console.log('Add token!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        switchMap((authToken) => { console.log(req.url,'Add token!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
           // do the changes here
           const authReq = req.clone({ setHeaders: { Authorization: authToken } });
 
