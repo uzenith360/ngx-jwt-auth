@@ -28,13 +28,9 @@ export class AuthInterceptorService implements HttpInterceptor {
         this.config.resetPasswordUrl,
         ...(this.config.interceptorSkipUrls || [])
       ].includes(req.url)
-      || req.headers.has("skip-interceptors")
+      || req.headers.get("skip-interceptors")
     ) {
-      return next.handle(
-        req.headers.has("skip-interceptors")
-          ? req.clone({ headers: req.headers.delete("skip-interceptors") })
-          : req
-      );
+      return next.handle(req);
     }
 
     return from(this.authManagerService.getAuthorization())
