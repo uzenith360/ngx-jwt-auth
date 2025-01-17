@@ -41,7 +41,7 @@ export class JwtAuthModule {
     return {
       ngModule: JwtAuthModule,
       providers: [
-        authHttpInterceptorProvider,
+        // authHttpInterceptorProvider,
         // AuthInterceptorService,
         AuthManagerService,
         JwtAuthService,
