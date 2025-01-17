@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { HttpRequest, HttpInterceptor, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
+import { HttpRequest, HttpInterceptor, HttpHandler, HttpEvent, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 import { Observable, from, throwError } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
@@ -29,12 +29,25 @@ export class AuthInterceptorService implements HttpInterceptor {
         ...(this.config.interceptorSkipUrls || [])
       ].includes(req.url)
       || req.headers.get("skip-interceptors")
-    ) {
-      const skipInterceptorReq = req.clone();
+    ) {console.log(req.url,'skip interceptor!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+      // const skipInterceptorReq = req.clone();
 
-      const headersWithoutAuth = skipInterceptorReq.headers.delete('skip-interceptors');
+      // const headersWithoutAuth = skipInterceptorReq.headers.delete('skip-interceptors');
 
-      return next.handle(skipInterceptorReq.clone({ headers: headersWithoutAuth }));
+      // return next.handle(skipInterceptorReq.clone({ headers: headersWithoutAuth }));
+
+      // Create a new HttpHeaders object without the 'Authorization' header
+    let newHeaders = new HttpHeaders();
+    req.headers.keys().forEach(key => {
+      if (key.toLowerCase() !== 'skip-interceptors') {
+        newHeaders = newHeaders.set(key, req.headers.get(key) as string);
+      }
+    });
+
+    // Clone the request with the new set of headers
+    const clonedRequest = req.clone({ headers: newHeaders });
+
+    return next.handle(clonedRequest);
     }
 
     return from(this.authManagerService.getAuthorization())
