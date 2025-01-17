@@ -1,3 +1,10 @@
+## [1.5.5](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.5.4...v1.5.5) (2025-01-17)
+
+
+### Bug Fixes
+
+* remove skip-interceptors from authinterceptor if it exists ([ee7639d](https://github.com/uzenith360/ngx-jwt-auth/commit/ee7639d42b6ca0b0b400e61b2406167418e91305))
+
 ## [1.5.4](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.5.3...v1.5.4) (2024-12-17)
 
 
