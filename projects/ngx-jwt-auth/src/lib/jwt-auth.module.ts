@@ -16,7 +16,7 @@ import { UserService } from './user.service';
 import { JwtModule } from '@auth0/angular-jwt';
 import { JwtAuthService } from './jwt-auth.service';
 import { AuthDialogService } from './auth-dialog.service';
-import { AuthInterceptorService } from './auth-interceptor.service';
+// import { AuthInterceptorService } from './auth-interceptor.service';
 import { AuthManagerGuard } from './auth-manager.guard';
 import { EnvironmentConfig } from './environment-config.interface';
 import { EnvironmentConfigService } from './environment-config.service';
@@ -42,7 +42,7 @@ export class JwtAuthModule {
       ngModule: JwtAuthModule,
       providers: [
         authHttpInterceptorProvider,
-        AuthInterceptorService,
+        // AuthInterceptorService,
         AuthManagerService,
         JwtAuthService,
         AuthDialogService,
