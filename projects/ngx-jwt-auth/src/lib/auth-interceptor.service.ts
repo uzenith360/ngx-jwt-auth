@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { HttpRequest, HttpInterceptor, HttpHandler, HttpEvent, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpRequest, HttpInterceptor, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
 
 import { Observable, from, throwError } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
@@ -28,31 +28,16 @@ export class AuthInterceptorService implements HttpInterceptor {
         this.config.resetPasswordUrl,
         ...(this.config.interceptorSkipUrls || [])
       ].includes(req.url)
-      || req.headers.get("skip-interceptors")
-    ) {console.log(req.url,'skip interceptor!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-      // const skipInterceptorReq = req.clone();
-
-      // const headersWithoutAuth = skipInterceptorReq.headers.delete('skip-interceptors');
-
-      // return next.handle(skipInterceptorReq.clone({ headers: headersWithoutAuth }));
-
-      // Create a new HttpHeaders object without the 'Authorization' header
-    let newHeaders = new HttpHeaders();
-    req.headers.keys().forEach(key => {
-      if (key.toLowerCase() !== 'skip-interceptors') {
-        newHeaders = newHeaders.set(key, req.headers.get(key) as string);
-      }
-    });
-
-    // Clone the request with the new set of headers
-    const clonedRequest = req.clone({ headers: newHeaders });
-
-    return next.handle(clonedRequest);
+      || req.headers.has("skip-interceptors")
+    ) {
+      return req.headers.has("skip-interceptors")
+        ? next.handle(req.clone({ headers: req.headers.delete("skip-interceptors") }))
+        : next.handle(req);
     }
 
     return from(this.authManagerService.getAuthorization())
       .pipe(
-        switchMap((authToken) => { console.log(req.url,'Add token!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        switchMap((authToken) => {
           // do the changes here
           const authReq = req.clone({ setHeaders: { Authorization: authToken } });
 
