@@ -34,7 +34,7 @@ export class AuthInterceptorService implements HttpInterceptor {
 
       const headersWithoutAuth = skipInterceptorReq.headers.delete('skip-interceptors');
 
-      return next.handle(req.clone({ headers: headersWithoutAuth }));
+      return next.handle(skipInterceptorReq.clone({ headers: headersWithoutAuth }));
     }
 
     return from(this.authManagerService.getAuthorization())
