@@ -1,3 +1,10 @@
+## [1.5.19](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.5.18...v1.5.19) (2025-03-02)
+
+
+### Bug Fixes
+
+* add error 422 message to auth method ([443ab15](https://github.com/uzenith360/ngx-jwt-auth/commit/443ab152885184401ea390d461ff824b98ec02f7))
+
 ## [1.5.18](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.5.17...v1.5.18) (2025-01-17)
 
 
