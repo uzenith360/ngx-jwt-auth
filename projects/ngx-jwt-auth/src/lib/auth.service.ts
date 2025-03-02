@@ -35,7 +35,7 @@ export class AuthService {
         (err, caught: Observable<{ jwt: JWT, message: string }>) => {
           switch (err.status) {
             case 422:
-              return throwError(() => new HttpError(err.statusText, err.status));
+              return throwError(() => new HttpError(err?.body?.message, err.status));
             case 400:
             case 401:
               return throwError(() => new HttpError(err.error?.message ?? 'Login details are incorrect, use forgot password', err.status));
@@ -63,7 +63,7 @@ export class AuthService {
           (err, caught: Observable<{ jwt: JWT, message: string }>) => {
             switch (err.status) {
               case 422:
-                return throwError(() => new HttpError(err.statusText, err.status));
+                return throwError(() => new HttpError(err?.body?.message, err.status));
               case 400:
               case 401:
                 return throwError(() => new HttpError('Login details are incorrect, use forgot password', err.status));
