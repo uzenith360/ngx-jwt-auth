@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.5.21...v1.6.0) (2025-03-21)
+
+
+### Features
+
+* migrate to standalone components ([5d9aca6](https://github.com/uzenith360/ngx-jwt-auth/commit/5d9aca63df8f1a9662fe3d952ede44f291b91120))
+
 ## [1.5.21](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.5.20...v1.5.21) (2025-03-02)
 
 
