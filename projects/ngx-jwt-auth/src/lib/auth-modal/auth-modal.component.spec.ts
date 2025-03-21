@@ -19,15 +19,15 @@ describe('AuthModalComponent', () => {
     waitForAsync(
       () => {
         TestBed.configureTestingModule({
-          declarations: [AuthModalComponent], imports: [MatFormFieldModule, ReactiveFormsModule, MatDialogModule, MatInputModule, MatButtonModule, MatIconModule, BrowserAnimationsModule],
-          providers: [
-            { provide: HttpClient, useValue: {} },
-            { provide: MAT_DIALOG_DATA, useValue: {} },
-            { provide: MatDialogRef, useValue: {} },
-            { provide: UntypedFormBuilder, useValue: {} },
-            { provide: EnvironmentConfigService, useValue: {} }
-          ]
-        }).compileComponents();
+    imports: [MatFormFieldModule, ReactiveFormsModule, MatDialogModule, MatInputModule, MatButtonModule, MatIconModule, BrowserAnimationsModule, AuthModalComponent],
+    providers: [
+        { provide: HttpClient, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} },
+        { provide: UntypedFormBuilder, useValue: {} },
+        { provide: EnvironmentConfigService, useValue: {} }
+    ]
+}).compileComponents();
       }
     ),
   );

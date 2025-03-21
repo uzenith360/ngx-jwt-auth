@@ -21,9 +21,7 @@ import { AuthManagerGuard } from './auth-manager.guard';
 import { EnvironmentConfig } from './environment-config.interface';
 import { EnvironmentConfigService } from './environment-config.service';
 
-@NgModule({ declarations: [
-        AuthModalComponent,
-    ],
+@NgModule({
     // providers: [],
     exports: [
         JwtModule,
@@ -35,7 +33,7 @@ import { EnvironmentConfigService } from './environment-config.service';
         MatFormFieldModule,
         MatButtonModule,
         MatInputModule,
-        MatIconModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        MatIconModule, AuthModalComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class JwtAuthModule {
   static forRoot(config: EnvironmentConfig): ModuleWithProviders<JwtAuthModule> {
     return {
