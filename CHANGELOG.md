@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.6.0...v1.6.1) (2025-04-01)
+
+
+### Bug Fixes
+
+* upgrade angular and run migrations ([5ed47c9](https://github.com/uzenith360/ngx-jwt-auth/commit/5ed47c9eb0860f3922f4af7cb30bf52d9094dfb7))
+
 # [1.6.0](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.5.21...v1.6.0) (2025-03-21)
 
 
