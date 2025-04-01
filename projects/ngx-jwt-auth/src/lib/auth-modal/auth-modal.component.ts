@@ -7,7 +7,7 @@ import { EnvironmentConfigService } from '../environment-config.service';
 import { EnvironmentConfig } from '../environment-config.interface';
 import { lastValueFrom } from 'rxjs';
 import { CdkScrollable } from '@angular/cdk/scrolling';
-import { NgIf, TitleCasePipe } from '@angular/common';
+import { TitleCasePipe } from '@angular/common';
 import { MatFormField, MatLabel, MatError, MatSuffix } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { MatIconButton } from '@angular/material/button';
@@ -18,7 +18,7 @@ import { MatRipple } from '@angular/material/core';
     selector: 'app-auth-modal',
     templateUrl: './auth-modal.component.html',
     styleUrls: ['./auth-modal.component.css'],
-    imports: [MatDialogTitle, CdkScrollable, MatDialogContent, NgIf, ReactiveFormsModule, MatFormField, MatLabel, MatInput, MatError, MatIconButton, MatSuffix, MatIcon, MatDialogActions, MatRipple, MatDialogClose, TitleCasePipe]
+    imports: [MatDialogTitle, CdkScrollable, MatDialogContent, ReactiveFormsModule, MatFormField, MatLabel, MatInput, MatError, MatIconButton, MatSuffix, MatIcon, MatDialogActions, MatRipple, MatDialogClose, TitleCasePipe]
 })
 export class AuthModalComponent implements OnInit {
   public isJWTExists: boolean = !!this.config.tryPINLogin && this.jwtExists;
