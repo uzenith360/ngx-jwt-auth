@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, Optional } from '@angular/core';
+import { Component, Inject, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
 import { Validators, UntypedFormBuilder, ReactiveFormsModule } from '@angular/forms';
 
@@ -13,6 +13,8 @@ import { MatInput } from '@angular/material/input';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatRipple } from '@angular/material/core';
+import { Platform } from '@angular/cdk/platform';
+import { sixDigitNumberValidator } from '../six-digit-number-validator';
 
 @Component({
     selector: 'app-auth-modal',
@@ -20,18 +22,18 @@ import { MatRipple } from '@angular/material/core';
     styleUrls: ['./auth-modal.component.css'],
     imports: [MatDialogTitle, CdkScrollable, MatDialogContent, ReactiveFormsModule, MatFormField, MatLabel, MatInput, MatError, MatIconButton, MatSuffix, MatIcon, MatDialogActions, MatRipple, MatDialogClose, TitleCasePipe]
 })
-export class AuthModalComponent implements OnInit {
-  public isJWTExists: boolean = !!this.config.tryPINLogin && this.jwtExists;
+export class AuthModalComponent {
+  public shouldUsePinLogin: boolean = !!this.config.tryPINLogin && this.jwtExists && (this.platform.ANDROID || this.platform.IOS);
   public loginForm = new UntypedFormBuilder().group({
-    [this.config.authIdName]: ['', this.isJWTExists ? Validators.nullValidator : Validators.required],
-    password: ['', this.isJWTExists ? Validators.nullValidator : Validators.required],
-    pin: ['', this.isJWTExists ? Validators.required : Validators.nullValidator],
+    [this.config.authIdName]: ['', this.shouldUsePinLogin ? Validators.nullValidator : Validators.required],
+    password: ['', this.shouldUsePinLogin ? Validators.nullValidator : Validators.required],
+    pin: ['', this.shouldUsePinLogin ? [Validators.required, sixDigitNumberValidator()] : Validators.nullValidator],
   });
   public authIdName: string = this.config.authIdName;
   public isSubmitting = false;
   public submitMessage: string
-    = this.isJWTExists
-      ? 'Please input your secure PIN to log in to your account'
+    = this.shouldUsePinLogin
+      ? 'Please input your 6 Digit PIN to log in to your account'
       : 'Please input your login details to log in to your account';
   public hide: boolean = true;
 
@@ -40,9 +42,8 @@ export class AuthModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) private jwtExists: boolean/*JWTAndUser*//*: DialogData*/,
     @Inject(EnvironmentConfigService) private config: EnvironmentConfig,
     private readonly authManagerService: AuthService,
+    private readonly platform: Platform,
   ) { }
-
-  ngOnInit(): void { }
 
   login(): void {
     if (!this.loginForm.valid) {
@@ -56,7 +57,7 @@ export class AuthModalComponent implements OnInit {
     this.submitMessage = 'Submitting...';
 
     lastValueFrom(
-      this.isJWTExists
+      this.shouldUsePinLogin
         ? this.authManagerService.authWithPIN(pin)
         : this.authManagerService.auth(authId, password)
     ).then(res => {

@@ -1,54 +1,63 @@
 <h1 mat-dialog-title class="!text-center !font-semibold !text-md">Login</h1>
 <div class="!pb-0" mat-dialog-content>
-  <p class="!mb-4">@if (submitMessage) {
-    <small>{{submitMessage}}</small>
-  }</p>
+  <p class="!mb-4">
+    @if (submitMessage) {
+    <small>
+      {{
+      loginFormControls['pin'].touched && loginFormControls['pin'].hasError('sixDigitNumber')
+      ? 'Your PIN must be **6 digits**. Please try again or click \'Cancel\' to return to the main login.'
+      : submitMessage
+      }}
+    </small>
+    }
+  </p>
   <form [formGroup]="loginForm" (ngSubmit)="login()">
-    @if (!isJWTExists) {
-      <mat-form-field class="w-full" appearance="fill">
-        <mat-label>{{authIdName|titlecase}}</mat-label>
-        <input type="text" [formControlName]="authIdName" [readonly]="isSubmitting" matInput
-          [required]="!isJWTExists" />
-        @if (loginFormControls[authIdName].hasError('required')) {
-          <mat-error>{{authIdName|titlecase}} is required.
-          </mat-error>
-        }
-        <!-- <mat-error *ngIf="loginFormControls.email?.errors?.email">Email is invalid.
+    @if (!shouldUsePinLogin) {
+    <mat-form-field class="w-full" appearance="fill">
+      <mat-label>{{authIdName | titlecase}}</mat-label>
+      <input type="text" [formControlName]="authIdName" [readonly]="isSubmitting" matInput
+        [required]="!shouldUsePinLogin" />
+      @if (loginFormControls[authIdName].hasError('required')) {
+      <mat-error>{{authIdName | titlecase}} is required.</mat-error>
+      }
+      <!-- <mat-error *ngIf="loginFormControls.email?.errors?.email">Email is invalid.
       </mat-error> -->
     </mat-form-field>
     <mat-form-field class="w-full" appearance="fill">
       <mat-label>Password</mat-label>
       <input autocomplete="current-password" type="password" formControlName="password" [readonly]="isSubmitting"
-        matInput [required]="!isJWTExists" />
+        matInput [required]="!shouldUsePinLogin" />
       @if (loginFormControls.password?.errors?.required) {
-        <mat-error>Password is required.
-        </mat-error>
+      <mat-error>Password is required.</mat-error>
       }
     </mat-form-field>
-  } @else {
+    } @else {
     <mat-form-field class="w-full pin-input" appearance="fill">
       <mat-label>PIN</mat-label>
       <input class="!text-center" [type]="hide ? 'password' : 'text'" formControlName="pin" [readonly]="isSubmitting"
-        matInput autocomplete="new-password" [required]="isJWTExists" />
-      <button mat-icon-button matSuffix (click)="hide = !hide; false"
-        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        matInput autocomplete="false" [required]="shouldUsePinLogin" />
+      <button mat-icon-button matSuffix (click)="hide = !hide; false" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
       </button>
       @if (loginFormControls['pin'].hasError('required')) {
-        <mat-error>PIN is required.
-        </mat-error>
+      <mat-error>PIN is required.
+      </mat-error>
+      }
+      @if (loginFormControls['pin'].hasError('sixDigitNumber')) {
+      <mat-error>Your PIN must be 6 digits. Please try again or click 'Cancel' to return to the main login.
+      </mat-error>
       }
     </mat-form-field>
-  }
-  <button hidden type="submit">Submit</button>
-</form>
+    }
+    <button hidden type="submit">Submit</button>
+  </form>
 </div>
 <div mat-dialog-actions>
   <div class="justify-between flex w-full p-4 !pt-0">
     <button class="px-4 py-2" matRipple [mat-dialog-close]="null" aria-label="Cancel Button">Cancel</button>
     <button
       class="px-4 py-2 !cursor-pointer shadow-sm rounded-sm bg-blue-900 text-white hover:text-blue-900 hover:bg-white"
-      matRipple [disabled]="!loginForm.valid || isSubmitting" aria-label="Login Button"
-    (click)="login()">Login</button>
+      matRipple [disabled]="!loginForm.valid || isSubmitting" aria-label="Login Button" (click)="login()">Login</button>
   </div>
 </div>
