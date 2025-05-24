@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.6.1...v1.6.2) (2025-05-24)
+
+
+### Bug Fixes
+
+* pin login clarification ([6e37c93](https://github.com/uzenith360/ngx-jwt-auth/commit/6e37c93c1f63a8f52cc96bebfb2bd25950e5f5a9))
+
 ## [1.6.1](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.6.0...v1.6.1) (2025-04-01)
 
 
