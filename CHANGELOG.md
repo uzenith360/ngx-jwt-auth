@@ -1,3 +1,16 @@
+# [1.7.0](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.6.2...v1.7.0) (2025-09-16)
+
+
+### Bug Fixes
+
+* test deps ([3d3ea7e](https://github.com/uzenith360/ngx-jwt-auth/commit/3d3ea7e4f24cf3746fae847f37e3599c12f09484))
+
+
+### Features
+
+* upgrade to angular 20 ([44cd33f](https://github.com/uzenith360/ngx-jwt-auth/commit/44cd33f3508c091666c059e436a9f49f9c4756e6))
+* upgrade to angular 20 ([d914c07](https://github.com/uzenith360/ngx-jwt-auth/commit/d914c077e59df6f98bca60ef8519cd112c5c784d))
+
 ## [1.6.2](https://github.com/uzenith360/ngx-jwt-auth/compare/v1.6.1...v1.6.2) (2025-05-24)
 
 
